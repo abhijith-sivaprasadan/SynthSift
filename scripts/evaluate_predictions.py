@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from synthsift.screening import evaluate_scores, workload_at_recall
 p=argparse.ArgumentParser(); p.add_argument('predictions'); p.add_argument('--threshold',type=float,default=.5); a=p.parse_args()
-ref=pd.read_csv(ROOT/'data/records.csv'); ref=ref[ref.primary_benchmark==1][['id','reference_label','title']]
+ref=pd.concat([pd.read_csv(p) for p in sorted((ROOT/'data/records').glob('records_*.csv'))],ignore_index=True)[['id','reference_label','title']]
 pred=pd.read_csv(a.predictions)[['id','score']]
 df=ref.merge(pred,on='id',how='inner',validate='one_to_one')
 r=evaluate_scores(df.reference_label,df.score,a.threshold,'external')
