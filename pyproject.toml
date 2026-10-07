@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthsift"
+version = "0.1.0"
+description = "Reproducible human-in-the-loop screening and extraction benchmark for environmental evidence synthesis"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scikit-learn>=1.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
