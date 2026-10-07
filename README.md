@@ -41,24 +41,28 @@ The search protocol is frozen in [`protocols/search_protocol_v1.md`](protocols/s
 
 This is a ranked-search **candidate corpus**, not an exhaustive systematic-search strategy.
 
-## Manual screening workflow
+## Human reference screening
 
-The raw search snapshot contains no eligibility labels. Build a screening queue with:
+A deterministic **240-record Phase-1 sample** has now been frozen from the 538-record search corpus. Sampling is proportional across abstract availability and OpenAlex rank bands and uses **no ML/LLM predictions**.
+
+A prespecified **96-record subset** is reserved for blinded independent second review.
+
+Run reviewer 1 with:
 
 ```bash
 python -m pip install -e '.[dev]'
-python scripts/build_screening_queue.py
-```
-
-Then screen against the frozen eligibility protocol:
-
-```bash
 python scripts/screen_queue.py --reviewer abhijith
 ```
 
-The screener supports `include`, `exclude`, `uncertain`, skip and resume. Partial decisions are written under `annotations/` and ignored by Git so unfinished labels cannot leak into the benchmark. See [`docs/screening_workflow.md`](docs/screening_workflow.md).
+Run the second reviewer with:
 
-A second reviewer should independently screen a prespecified subset before model development if the project is used for a stronger human-agreement benchmark.
+```bash
+python scripts/screen_queue.py --reviewer reviewer2 --second-review-only
+```
+
+`scripts/screening_status.py` reports progress, raw agreement, Cohen's kappa and disagreements. Partial decisions stay under ignored `annotations/`; only a completed/adjudicated label set is frozen into `data/labels/`.
+
+See [`docs/screening_workflow.md`](docs/screening_workflow.md).
 
 ## Reproducible acquisition
 
