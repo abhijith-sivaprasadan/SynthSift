@@ -30,11 +30,17 @@ jobs:
       - name: Compile
         run: python -m compileall -q src scripts
 
-      - name: Unit, provenance, and corpus-integrity tests
+      - name: Unit, provenance, corpus, and sample-integrity tests
         run: pytest -q
 
-      - name: Build search-derived screening queue
+      - name: Rebuild deterministic screening samples
+        run: python scripts/create_screening_samples.py --output-dir /tmp/synthsift-samples
+
+      - name: Build full search-derived screening queue
         run: python scripts/build_screening_queue.py
+
+      - name: Screening-status smoke test
+        run: python scripts/screening_status.py --decisions /tmp/nonexistent-screening-decisions.csv
 
       - name: Screening benchmark smoke test
         run: python scripts/run_screening_benchmark.py --repeats 3
