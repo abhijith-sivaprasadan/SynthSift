@@ -2,141 +2,167 @@
 
 **Reproducible human-in-the-loop screening and structured extraction for environmental evidence synthesis.**
 
-SynthSift is a small research-methods pilot that tests how automated text workflows can support — rather than replace — evidence-synthesis decisions. The demonstration task asks:
+SynthSift is a research-methods project for evaluating where automation can safely reduce evidence-synthesis workload without obscuring errors, uncertainty or human judgement. The demonstration domain is residential heat-pump adoption.
 
-> **What drives or limits household/residential adoption, uptake or diffusion of heat pumps?**
+> **Review question:** What drives or limits household/residential adoption, uptake or diffusion of heat pumps?
 
-The repository focuses on the parts that matter when automation is used in research: a frozen eligibility protocol, auditable reference decisions, source-text provenance, held-out evaluation, false-negative inspection, uncertainty, workload/recall trade-offs, and structured data extraction.
+The project now has two layers:
 
-It is intentionally **not** presented as a systematic review or as evidence that the reported model performance will generalise to a real database search.
+1. a small, provenance-audited pilot benchmark used to validate the evaluation machinery; and
+2. a fixed **search-derived OpenAlex corpus** for the next, more realistic screening benchmark.
 
-## What is in the repository
+It is intentionally not presented as a completed systematic review.
 
-- `protocols/screening_protocol_v1.md` — frozen title/abstract eligibility protocol.
-- `data/records/` — 16 provenance-verified pilot records with source URL, screening text and protocol decisions.
-- `data/extraction_reference.csv` — structured reference fields for eligible studies.
-- `src/synthsift/` — reusable screening and extraction utilities.
-- `scripts/run_screening_benchmark.py` — repeated out-of-fold screening evaluation.
-- `scripts/run_extraction_benchmark.py` — structured-extraction baseline and field-level evaluation.
-- `scripts/evaluate_predictions.py` — model-agnostic evaluator for external/LLM screening scores.
-- `docs/llm_prompt_v1.md` — versioned conservative LLM screening prompt; no LLM result is claimed unless an actual run is committed.
-- `docs/methodology.md` — design choices and limitations.
-- `docs/ai_disclosure.md` — AI-assistance disclosure.
-- `tests/` + GitHub Actions — reproducibility checks.
+## v0.2: search-derived candidate corpus
 
-## Data provenance audit
+On 7 October 2026, six OpenAlex title/abstract query arms retrieved the top 100 relevance-ranked records for:
 
-The original prototype contained several AI-rewritten summaries in a column labelled as abstracts. That is unacceptable for an evidence-synthesis benchmark because transformed text can change both screening difficulty and model behaviour.
+- `heat pump adoption`
+- `heat pump uptake`
+- `heat pump household`
+- `heat pump consumer`
+- `heat pump willingness`
+- `heat pump barrier`
 
-SynthSift therefore separates provenance explicitly:
+The frozen snapshot contains:
 
-- `source_abstract` — author/publisher abstract verified against the linked public source;
-- `source_summary` — source-authored summary or executive-summary text when no conventional abstract was available;
-- `derived_summary` / `source_mismatch` — unresolved legacy provenance states recorded only in `data/provenance_audit.csv`; transformed screening text is not distributed.
+| Stage | Records |
+|---|---:|
+| Raw retrievals | 600 |
+| Exact-deduplicated candidates | **538** |
+| With OpenAlex abstract | 330 |
+| Title-only | 208 |
+| OpenAlex English-language flag | 481 |
+| Potential publication/version clusters | 29 clusters / 66 records |
 
-The benchmark dataset therefore contains only the 16 records with verified source-authored screening text. Seven unresolved legacy records remain visible in the audit manifest without their transformed text.
+Exact deduplication uses normalized DOI when present and OpenAlex ID otherwise. Different report, preprint, conference and journal records are not silently collapsed: normalized-title clustering flags them for human adjudication.
 
-## Reference decisions
+The search protocol is frozen in [`protocols/search_protocol_v1.md`](protocols/search_protocol_v1.md), the machine-readable configuration is in [`config/search_v1.json`](config/search_v1.json), and the dated snapshot is under [`data/search/openalex_snapshot_2026-10-07/`](data/search/openalex_snapshot_2026-10-07/).
 
-The current labels are protocol-based pilot decisions. They are **not dual-independent-human ground truth**. The protocol was tightened before evaluation so that, for example:
+This is a ranked-search **candidate corpus**, not an exhaustive systematic-search strategy.
 
-- cross-technology heating-choice studies remain eligible when heat-pump choice is analysed directly;
-- post-adoption satisfaction alone is not treated as an adoption study;
-- engineering optimisation, refrigerant/LCA and industrial/district-heat studies are excluded unless they contain an adoption-decision dimension.
+## Manual screening workflow
 
-Every exclusion has a reason in the committed record shards.
-
-## Screening benchmark
-
-Two lightweight, locally reproducible baselines are included:
-
-1. word TF-IDF (1–2 grams) + class-balanced logistic regression;
-2. character TF-IDF (3–5 grams) + class-balanced logistic regression.
-
-The script uses **repeated stratified out-of-fold predictions**. Each record is held out once per repeat, and its held-out probabilities are averaged across repeats before evaluation. This reduces dependence on one arbitrary split and avoids in-sample scoring.
-
-Run:
+The raw search snapshot contains no eligibility labels. Build a screening queue with:
 
 ```bash
-python -m pip install -e .
-python scripts/run_screening_benchmark.py
+python -m pip install -e '.[dev]'
+python scripts/build_screening_queue.py
 ```
 
-Current provenance-clean pilot (`N=16`, 9 include / 7 exclude; 10 repeats):
+Then screen against the frozen eligibility protocol:
 
-| Model | Precision | Recall | F1 | False negatives |
-|---|---:|---:|---:|---:|
-| word TF-IDF + logistic regression | 0.818 | 1.000 | 0.900 | 0 |
-| character TF-IDF + logistic regression | 0.900 | 1.000 | 0.947 | 0 |
+```bash
+python scripts/screen_queue.py --reviewer abhijith
+```
 
-Both ranking baselines place all nine eligible records within the first nine screened records, corresponding to an **illustrative 43.8% workload reduction at 100% recall on this tiny curated set**.
+The screener supports `include`, `exclude`, `uncertain`, skip and resume. Partial decisions are written under `annotations/` and ignored by Git so unfinished labels cannot leak into the benchmark. See [`docs/screening_workflow.md`](docs/screening_workflow.md).
 
-That number should **not** be interpreted as expected real-world savings. The corpus is deliberately small, prevalence is much higher than in many real systematic searches, and the negatives are not a representative sample of difficult near-misses. `docs/methodology.md` records these limitations explicitly.
+A second reviewer should independently screen a prespecified subset before model development if the project is used for a stronger human-agreement benchmark.
 
-## Structured extraction benchmark
+## Reproducible acquisition
 
-For nine eligible records, the repository also stores small reference fields:
+The committed snapshot is fixed because OpenAlex relevance ranking can change as its index changes. The acquisition process itself can be rerun with:
+
+```bash
+python scripts/fetch_openalex.py
+```
+
+The script preserves DOI, OpenAlex ID, title, publication date/year, work type, language flag, abstract when available, landing-page URL, query-arm provenance and best within-arm rank.
+
+## Pilot benchmark
+
+The original 16-record pilot remains as a provenance-clean methods check. It uses only source-authored screening text after removing transformed summaries from the first prototype.
+
+Current repeated out-of-fold screening results:
+
+| Model | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| word TF-IDF + logistic regression | 0.818 | 1.000 | 0.900 |
+| character TF-IDF + logistic regression | 0.900 | 1.000 | 0.947 |
+
+Both ranked all nine eligible pilot records within the first nine screened records, an illustrative 43.8% workload reduction at 100% recall. These numbers are retained as pipeline checks only and should not be interpreted as real-world performance estimates.
+
+## Structured extraction pilot
+
+For nine eligible pilot studies, SynthSift stores reference fields for:
 
 - country;
 - study design;
-- sample size where that quantity is meaningful;
-- factor tags describing reported adoption drivers/barriers.
+- sample size where meaningful;
+- adoption-driver/barrier factor tags.
 
-A transparent deterministic extractor provides the first benchmark. It is deliberately simple: the important artifact is the **evaluation harness**, which can later compare rule-based, NLP and LLM extraction outputs against the same reference table.
+A deterministic baseline provides a transparent first extraction benchmark. The important artifact is the evaluation harness: later NLP or LLM extraction outputs can be compared field by field rather than judged impressionistically.
 
-```bash
-python scripts/run_extraction_benchmark.py
-```
+## Evaluating external or LLM screening predictions
 
-On the current reference subset, the deterministic baseline exactly matches the available country, study-design and participant/sample-size fields. The corpus is too small for those percentages to be scientifically interesting; the point is to make extraction errors measurable and auditable rather than judge generated outputs impressionistically.
-
-## Evaluating an LLM without coupling the project to an API
-
-SynthSift does not claim an LLM experiment that was never run. Any model can instead produce:
+SynthSift is model-provider agnostic. A model can produce:
 
 ```csv
 id,score
 R01,0.94
 R02,0.81
-...
 ```
 
-and be evaluated through the same harness:
+and be evaluated with:
 
 ```bash
 python scripts/evaluate_predictions.py predictions.csv
 ```
 
-`docs/llm_prompt_v1.md` contains a conservative JSON screening prompt with an explicit `uncertain` state. A future model run should record provider/model identifier, date, prompt version, decoding settings, raw outputs and any human adjudication.
+[`docs/llm_prompt_v1.md`](docs/llm_prompt_v1.md) contains a conservative `include / exclude / uncertain` screening prompt, but the repository does not claim an LLM experiment unless an actual run and its configuration are committed.
+
+## Repository map
+
+- `config/search_v1.json` — machine-readable OpenAlex acquisition configuration.
+- `protocols/search_protocol_v1.md` — frozen search protocol.
+- `protocols/screening_protocol_v1.md` — frozen eligibility protocol.
+- `data/search/openalex_snapshot_2026-10-07/` — 538-record fixed search snapshot.
+- `data/records/` — 16-record provenance-clean pilot benchmark.
+- `data/extraction_reference.csv` — pilot structured-extraction reference.
+- `src/synthsift/` — reusable screening, extraction and OpenAlex helpers.
+- `scripts/fetch_openalex.py` — live acquisition pipeline.
+- `scripts/build_screening_queue.py` — fixed-snapshot queue builder.
+- `scripts/screen_queue.py` — resumable manual title/abstract screener.
+- `scripts/run_screening_benchmark.py` — repeated out-of-fold pilot benchmark.
+- `scripts/run_extraction_benchmark.py` — structured-extraction pilot.
+- `tests/` — unit, provenance and corpus-integrity tests.
+- `.github/workflows/ci.yml` — install, compile, tests and benchmark smoke checks.
 
 ## Reproducibility
 
 ```bash
 python -m pip install -e '.[dev]'
 pytest -q
+python scripts/build_screening_queue.py
 python scripts/run_screening_benchmark.py --repeats 10
 python scripts/run_extraction_benchmark.py
 ```
 
-CI runs tests plus reduced-repeat screening and extraction checks on every push and pull request.
+CI runs the full offline integrity path on each push and pull request. The live OpenAlex fetch is deliberately not part of CI because the committed dated snapshot—not a changing external API—is the benchmark input.
 
-## Limitations
+## Methodological guardrails
 
-This repository is a methodological demonstration, not a completed evidence synthesis. The main limitations are:
+SynthSift keeps several boundaries explicit:
 
-- the provenance-clean benchmark contains only 16 records;
-- candidate records were curated rather than taken from a documented database-search result set, so class prevalence and screening difficulty are unrealistic;
-- reference decisions have not undergone dual independent screening and adjudication;
-- bootstrap intervals are descriptive for this fixed pilot sample and do not capture model-development uncertainty;
-- no LLM screening/extraction result is reported yet;
-- factor-tag extraction is stored as reference data but is not yet scored by the deterministic baseline.
+- search acquisition is separate from eligibility decisions;
+- unfinished human annotations are separate from frozen reference labels;
+- potential publication/version duplicates are flagged, not silently merged;
+- title-only records are retained rather than discarded;
+- LLM outputs are not called human ground truth;
+- no model result is reported unless the underlying run exists;
+- workload-reduction figures are always tied to the evaluated corpus and recall level.
 
-The next meaningful research step is not to chase a higher F1 on these 16 records. It is to run a documented bibliographic search, preserve the full candidate pool, obtain independently screened reference decisions, then compare classical, embedding and LLM-assisted methods under the same recall-first evaluation design.
+## Current limitations
+
+The search-derived corpus still needs reference screening. It is OpenAlex-only and relevance-ranked rather than an exhaustive multi-database systematic search. The current reference labels in the pilot have not undergone dual independent screening and adjudication. No real LLM comparison is reported yet.
+
+Those are now explicit next research steps rather than hidden weaknesses.
 
 ## AI-assistance disclosure
 
-AI tools were used for code assistance, public-source retrieval, provenance checking and methodological critique. See [`docs/ai_disclosure.md`](docs/ai_disclosure.md). The repository does not describe AI-assisted pilot labels as dual-human ground truth and does not report model experiments that were not actually executed.
+AI tools were used for code assistance, public-source retrieval, provenance checking and methodological critique. See [`docs/ai_disclosure.md`](docs/ai_disclosure.md).
 
 ## License
 
-MIT for code. Bibliographic/source text remains attributable to the linked original sources and should be used subject to the source's terms.
+MIT for project code. Bibliographic metadata comes from OpenAlex; source-linked publication content remains attributable to its original sources and should be used subject to applicable terms.
