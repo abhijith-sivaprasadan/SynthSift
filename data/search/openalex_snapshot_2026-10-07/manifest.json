@@ -1,0 +1,53 @@
+{
+  "snapshot_date": "2026-10-07",
+  "source": "OpenAlex",
+  "purpose": "Search-derived candidate corpus for title/abstract eligibility screening; not claimed as an exhaustive systematic search.",
+  "query_arms": [
+    {
+      "term": "adoption",
+      "query": "heat pump adoption",
+      "openalex_total_count": 1632,
+      "retrieved": 100
+    },
+    {
+      "term": "uptake",
+      "query": "heat pump uptake",
+      "openalex_total_count": 716,
+      "retrieved": 100
+    },
+    {
+      "term": "household",
+      "query": "heat pump household",
+      "openalex_total_count": 2149,
+      "retrieved": 100
+    },
+    {
+      "term": "consumer",
+      "query": "heat pump consumer",
+      "openalex_total_count": 1879,
+      "retrieved": 100
+    },
+    {
+      "term": "willingness",
+      "query": "heat pump willingness",
+      "openalex_total_count": 180,
+      "retrieved": 100
+    },
+    {
+      "term": "barrier",
+      "query": "heat pump barrier",
+      "openalex_total_count": 1454,
+      "retrieved": 100
+    }
+  ],
+  "raw_records": 600,
+  "deduplicated_records": 538,
+  "records_with_abstract": 330,
+  "records_without_abstract": 208,
+  "english_language_flag": 481,
+  "publication_year_min": 0,
+  "publication_year_max": 2026,
+  "deduplication": "normalized DOI when present; otherwise OpenAlex work ID",
+  "retrieval_order": "best (lowest) within-arm OpenAlex relevance rank, then title",
+  "note": "Search results are ranked top-100 results per query arm and therefore form a reproducible pilot candidate corpus, not an exhaustive systematic-review search."
+}
