@@ -1,0 +1,30 @@
+{
+  "source_snapshot": "data/search/openalex_snapshot_2026-10-07",
+  "phase1_n": 240,
+  "second_review_n": 96,
+  "phase1_seed": "20261007-phase1",
+  "second_review_seed": "20261007-second-review",
+  "sampling_method": "proportional allocation across abstract-availability x OpenAlex best-rank bands; deterministic FNV-1a ordering within strata",
+  "rank_bands": [
+    "1-20",
+    "21-50",
+    "51-100"
+  ],
+  "phase1_quotas": {
+    "abstract__01_20": 29,
+    "title_only__01_20": 22,
+    "abstract__21_50": 42,
+    "abstract__51_100": 76,
+    "title_only__51_100": 43,
+    "title_only__21_50": 28
+  },
+  "second_review_quotas": {
+    "abstract__21_50": 17,
+    "title_only__01_20": 9,
+    "abstract__01_20": 12,
+    "abstract__51_100": 30,
+    "title_only__21_50": 11,
+    "title_only__51_100": 17
+  },
+  "note": "No model score or predicted eligibility label was used in sampling."
+}
