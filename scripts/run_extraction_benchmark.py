@@ -5,7 +5,7 @@ import pandas as pd
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from synthsift.extraction import extract_country,extract_study_design,extract_sample_size
-rec=pd.read_csv(ROOT/'data/records.csv').set_index('id')
+rec=pd.concat([pd.read_csv(p) for p in sorted((ROOT/'data/records').glob('records_*.csv'))],ignore_index=True).set_index('id')
 ref=pd.read_csv(ROOT/'data/extraction_reference.csv').fillna('')
 rows=[]
 for _,r in ref.iterrows():
