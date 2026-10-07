@@ -30,8 +30,11 @@ jobs:
       - name: Compile
         run: python -m compileall -q src scripts
 
-      - name: Unit and data-integrity tests
+      - name: Unit, provenance, and corpus-integrity tests
         run: pytest -q
+
+      - name: Build search-derived screening queue
+        run: python scripts/build_screening_queue.py
 
       - name: Screening benchmark smoke test
         run: python scripts/run_screening_benchmark.py --repeats 3
