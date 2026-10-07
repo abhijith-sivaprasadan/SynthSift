@@ -4,13 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "synthsift"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reproducible human-in-the-loop screening and extraction benchmark for environmental evidence synthesis"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
   "numpy>=1.24",
   "pandas>=2.0",
+  "requests>=2.31",
   "scikit-learn>=1.3",
 ]
 
