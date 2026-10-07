@@ -1,8 +1,21 @@
-# Pilot results
+# Results and corpus status
 
-Generated from the provenance-clean subset on 7 October 2026.
+## v0.2 search-derived corpus — 7 October 2026
 
-## Screening
+A frozen OpenAlex acquisition using six title/abstract search arms produced:
+
+- **600 raw retrieved records**;
+- **538 exact-deduplicated candidate records**;
+- **330 records with abstracts**;
+- **208 title-only records**;
+- **481 records carrying OpenAlex's English-language flag**;
+- **29 normalized-title version clusters covering 66 records**.
+
+Exact deduplication uses DOI where present and OpenAlex ID otherwise. Potential publication/version duplicates are only flagged, not silently merged. Eligibility labels are deliberately absent from the acquisition snapshot; manual screening against `screening_protocol_v1.md` is the next reference-data step.
+
+This corpus is a ranked-search pilot, not an exhaustive systematic-review search.
+
+## v0.1 provenance-clean pilot screening
 
 Primary benchmark: **16 records (9 include / 7 exclude)** with source-authored abstract or summary text verified against the linked public source.
 
@@ -13,18 +26,11 @@ Primary benchmark: **16 records (9 include / 7 exclude)** with source-authored a
 
 Both model rankings reached all 9 included records after screening 9 of 16 records, an illustrative workload reduction of **43.8% at 100% recall**.
 
-### Bootstrap intervals
+These figures are retained only as a pipeline demonstration. They should not be used as real-world performance estimates.
 
-Conditional non-parametric bootstrap intervals on the fixed out-of-fold predictions:
+## Structured extraction pilot
 
-- word TF-IDF: precision 0.556–1.000; recall 1.000–1.000; F1 0.714–1.000;
-- character TF-IDF: precision 0.667–1.000; recall 1.000–1.000; F1 0.800–1.000.
-
-These intervals should not be read as evidence of production performance. With only 16 records, resampling a set with zero observed false negatives necessarily produces an uninformative recall interval. They also do not include uncertainty from data collection, label adjudication, model choice or hyperparameter selection.
-
-## Structured extraction
-
-Reference rows: 9 eligible records.
+Reference rows: 9 eligible pilot records.
 
 The deterministic baseline exactly matched all currently scored reference fields:
 
@@ -32,8 +38,4 @@ The deterministic baseline exactly matched all currently scored reference fields
 - study design: 9/9;
 - sample size: 4/4 records where a participant/sample-size field is meaningful and available in the screening text.
 
-This is a pipeline sanity check, not a claim of general extraction accuracy. The rules were developed on the pilot records and require evaluation on a larger held-out corpus before any performance interpretation.
-
-## What changed after the provenance audit
-
-The first prototype was not suitable for a research-facing portfolio because some fields described as abstracts were AI-rewritten summaries. The revised benchmark distributes only provenance-verified source-authored screening text. Seven unresolved legacy records remain listed in a provenance-audit manifest without their transformed text. One inconsistent inclusion decision (a post-adoption user-satisfaction report) was also corrected under the frozen protocol, while a heating-choice study that directly analyses heat-pump ownership remains eligible.
+Again, this is a pipeline sanity check rather than a general extraction-accuracy claim.
