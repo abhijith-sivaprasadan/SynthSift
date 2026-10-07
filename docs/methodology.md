@@ -3,7 +3,7 @@
 SynthSift is an intentionally small methodological pilot, not a systematic review and not a performance claim about production screening systems.
 
 ## Screening task
-The primary analysis uses only rows with `primary_benchmark=1`: records for which the screening text was verified as source-authored abstract/summary text from the linked public source during the provenance audit. Legacy paraphrases are retained in the dataset for auditability but excluded from the headline benchmark.
+The benchmark contains only records for which screening text was verified as source-authored abstract/summary text from the linked public source during the provenance audit. Legacy transformed text is not distributed; unresolved records are listed only in `data/provenance_audit.csv`.
 
 Two deliberately lightweight baselines are evaluated:
 
@@ -18,6 +18,6 @@ Metrics include precision, recall, F1, confusion matrix, false negatives, worklo
 A small reference table for included records contains country, study design, sample size and factor tags. `run_extraction_benchmark.py` evaluates a transparent deterministic baseline for country, study-design and sample-size extraction. This is deliberately a baseline: its purpose is to establish an auditable evaluation harness into which LLM or NLP extraction outputs can later be dropped.
 
 ## Provenance and limitations
-Some original pilot records contained AI-rewritten summaries. They are explicitly marked `derived_summary` and excluded from the primary benchmark. A source mismatch detected for R14 is marked `source_mismatch`. The project never treats a generated summary as a verbatim abstract.
+Some original pilot records contained AI-rewritten summaries. Those texts were removed from the public benchmark. Their record identifiers, URLs and provenance issues are retained in `data/provenance_audit.csv`; a source mismatch detected for R14 is recorded there. The project never treats a generated summary as a verbatim abstract.
 
 Reference labels are protocol-based pilot decisions and have not undergone dual independent human screening. The dataset is curated and small; prevalence and difficulty do not represent a database search result set. Workload-reduction percentages therefore illustrate the calculation, not expected real-world savings.
