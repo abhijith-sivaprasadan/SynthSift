@@ -7,15 +7,14 @@ sys.path.insert(0,str(ROOT/'src'))
 from synthsift.screening import repeated_oof_scores,evaluate_scores,workload_at_recall,bootstrap_ci
 
 p=argparse.ArgumentParser()
-p.add_argument('--all-records',action='store_true',help='include rows without verified source-authored text')
 p.add_argument('--repeats',type=int,default=10)
 p.add_argument('--output',default=str(ROOT/'results/screening_results.json'))
 a=p.parse_args()
-df=pd.read_csv(ROOT/'data/records.csv')
-if not a.all_records: df=df[df.primary_benchmark==1].copy()
+parts=sorted((ROOT/'data/records').glob('records_*.csv'))
+df=pd.concat([pd.read_csv(p) for p in parts],ignore_index=True)
 texts=(df.title.fillna('')+'. '+df.screening_text.fillna('')).tolist(); y=df.reference_label.astype(int).to_numpy()
 models=['word_tfidf_logreg','char_tfidf_logreg']
-out={'scope':'all_records' if a.all_records else 'provenance_clean','n':len(df),'included':int(y.sum()),'excluded':int(len(y)-y.sum()),'models':{}}
+out={'scope':'provenance_clean','n':len(df),'included':int(y.sum()),'excluded':int(len(y)-y.sum()),'models':{}}
 for model in models:
     scores=repeated_oof_scores(texts,y,model,n_splits=5,n_repeats=a.repeats)
     r=evaluate_scores(y,scores,name=model)
