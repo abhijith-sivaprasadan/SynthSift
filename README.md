@@ -13,7 +13,7 @@ It is intentionally **not** presented as a systematic review or as evidence that
 ## What is in the repository
 
 - `protocols/screening_protocol_v1.md` — frozen title/abstract eligibility protocol.
-- `data/records.csv` — 23 pilot records with source URL, screening text, provenance state, protocol decision and rationale.
+- `data/records/` — 16 provenance-verified pilot records with source URL, screening text and protocol decisions.
 - `data/extraction_reference.csv` — structured reference fields for eligible studies.
 - `src/synthsift/` — reusable screening and extraction utilities.
 - `scripts/run_screening_benchmark.py` — repeated out-of-fold screening evaluation.
@@ -32,10 +32,9 @@ SynthSift therefore separates provenance explicitly:
 
 - `source_abstract` — author/publisher abstract verified against the linked public source;
 - `source_summary` — source-authored summary or executive-summary text when no conventional abstract was available;
-- `derived_summary` — legacy transformed text retained only for auditability;
-- `source_mismatch` — URL/content mismatch detected during provenance checking.
+- `derived_summary` / `source_mismatch` — unresolved legacy provenance states recorded only in `data/provenance_audit.csv`; transformed screening text is not distributed.
 
-The **primary benchmark uses only `primary_benchmark=1` records**, i.e. the 16 rows with verified source-authored screening text. The other records remain visible so that unresolved provenance is not silently discarded.
+The benchmark dataset therefore contains only the 16 records with verified source-authored screening text. Seven unresolved legacy records remain visible in the audit manifest without their transformed text.
 
 ## Reference decisions
 
@@ -45,7 +44,7 @@ The current labels are protocol-based pilot decisions. They are **not dual-indep
 - post-adoption satisfaction alone is not treated as an adoption study;
 - engineering optimisation, refrigerant/LCA and industrial/district-heat studies are excluded unless they contain an adoption-decision dimension.
 
-Every exclusion has a reason in `data/records.csv`.
+Every exclusion has a reason in the committed record shards.
 
 ## Screening benchmark
 
@@ -125,7 +124,7 @@ CI runs tests plus reduced-repeat screening and extraction checks on every push 
 
 This repository is a methodological demonstration, not a completed evidence synthesis. The main limitations are:
 
-- only 16 records currently qualify for the provenance-clean primary benchmark;
+- the provenance-clean benchmark contains only 16 records;
 - candidate records were curated rather than taken from a documented database-search result set, so class prevalence and screening difficulty are unrealistic;
 - reference decisions have not undergone dual independent screening and adjudication;
 - bootstrap intervals are descriptive for this fixed pilot sample and do not capture model-development uncertainty;
