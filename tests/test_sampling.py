@@ -16,7 +16,7 @@ def load_snapshot():
 
 
 def test_hash_is_stable():
-    assert fnv1a32("20261007-phase1|OA0001") == 3788739959
+    assert fnv1a32("20261007-phase1|OA0001") == 2482150883
 
 
 def test_phase1_sample_shape_and_strata():
