@@ -1,0 +1,10 @@
+id,country,study_design,sample_size,factor_tags
+R01,Ireland,survey_experiment,574.0,building fabric requirements; installation cost; grants
+R02,United States,policy_evaluation,,rebates; loans; income
+R03,Ireland,agent_based_model,,economic factors; psychological factors; social networks
+R07,United States,review,,cost; comfort; reliability; demographics; perceptions
+R08,United Kingdom,questionnaire_survey,130.0,government funding; perceived effectiveness; information sources
+R09,United States,pilot_evaluation,110.0,market acceptance; installation cost
+R12,United Kingdom,evidence_synthesis,,capital cost; running cost; knowledge; building attributes; installer skills; policy
+R15,Germany,household_survey,775.0,ecological attitudes; fuel perceptions; economic incentives
+R21,United Kingdom,mixed_methods,,installer skills; capital cost; consumer demand; government support; knowledge
