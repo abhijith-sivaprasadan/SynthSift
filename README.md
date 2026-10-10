@@ -170,3 +170,11 @@ AI tools were used for code assistance, public-source retrieval, provenance chec
 ## License
 
 MIT for project code. Bibliographic metadata comes from OpenAlex; source-linked publication content remains attributable to its original sources and should be used subject to applicable terms.
+
+
+<!-- ci-workflow-coverage -->
+## Continuous integration
+
+[![CI](https://github.com/abhijith-sivaprasadan/SynthSift/actions/workflows/ci.yml/badge.svg?branch=codex%2Fci-publication)](https://github.com/abhijith-sivaprasadan/SynthSift/actions/workflows/ci.yml)
+
+See [CI coverage and limitations](CI.md) for the automated checks. The status badge tracks the published CI review branch.
