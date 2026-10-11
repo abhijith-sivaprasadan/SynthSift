@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  schedule:
+    - cron: "37 3 * * 3"
   workflow_dispatch:
   push:
     branches: [main]
@@ -13,9 +15,20 @@ concurrency:
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+
+env:
+  PYTHONUTF8: "1"
+
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
@@ -38,13 +51,13 @@ jobs:
         run: pytest -q
 
       - name: Rebuild deterministic screening samples
-        run: python scripts/create_screening_samples.py --output-dir /tmp/synthsift-samples
+        run: python scripts/create_screening_samples.py --output-dir "${{ runner.temp }}/synthsift-samples"
 
       - name: Build full search-derived screening queue
         run: python scripts/build_screening_queue.py
 
       - name: Screening-status smoke test
-        run: python scripts/screening_status.py --decisions /tmp/nonexistent-screening-decisions.csv
+        run: python scripts/screening_status.py --decisions "${{ runner.temp }}/nonexistent-screening-decisions.csv"
 
       - name: Screening benchmark smoke test
         run: python scripts/run_screening_benchmark.py --repeats 3
