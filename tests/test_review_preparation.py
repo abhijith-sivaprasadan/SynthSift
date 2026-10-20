@@ -71,3 +71,18 @@ def test_committed_review_outputs_match_sources():
             frame.reset_index(drop=True), committed.reset_index(drop=True),
             check_dtype=False,
         )
+
+
+def test_targeted_false_negative_recheck_preserves_frozen_ai_provenance():
+    path = OUT / "targeted_exclusion_recheck_20261020.csv"
+    audit = read_csv(path)
+    original = build_review_packs()[0]["excluded_record_audit_queue.csv"]
+    top = original.loc[original["audit_priority"].eq("high"), "candidate_id"]
+    assert len(audit) == len(top) == 8
+    assert audit["candidate_id"].tolist() == top.tolist()
+    assert (audit["frozen_ai_decision"] == "exclude").all()
+    suggested = audit.loc[audit["changes_recommendation"].eq("yes")]
+    assert len(suggested) == 1
+    assert suggested["candidate_id"].iat[0] == "OA0443"
+    assert suggested["second_ai_recommendation"].iat[0] == "include"
+    assert "sciencedirect.com" in suggested["external_source_url"].iat[0]
