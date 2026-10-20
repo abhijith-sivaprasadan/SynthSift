@@ -1,0 +1,8 @@
+{
+  "prompt_version": "llm_screening_v1",
+  "protocol_path": "protocols/screening_protocol_v1.md",
+  "system_prompt_path": "docs/llm_screening_system_v1.txt",
+  "temperature": 0.0,
+  "models": {"fixture": "synthetic-fixture-v1", "openai": "gpt-4o-mini"},
+  "max_completion_tokens": 400
+}

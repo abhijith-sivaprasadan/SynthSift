@@ -1,0 +1,6 @@
+candidate_id,title,abstract
+DEMO01,Homeowner grant awareness and willingness to adopt heat pumps,"An interview and survey study of homeowners assesses how grant awareness and initial installation costs influence willingness to purchase residential heat pumps."
+DEMO02,Exergetic comparison of industrial ammonia heat pump compressors,"Experimental tests compare compressor isentropic efficiency for industrial process heat pump installations and alternative refrigerants."
+DEMO03,Assessing new heat pump technology,
+DEMO04,Behavioural factors in residential boiler replacement,"Household interviews compare air-source heat pumps and gas boilers, and identify installer trust and upfront investment as drivers of household heating system choice."
+DEMO05,Neural demand response of installed household heat pumps,"A controller schedules existing household heat pumps to reduce electricity prices without studying household purchase or adoption decisions."

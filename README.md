@@ -13,6 +13,22 @@ The project now has two layers:
 
 It is intentionally not presented as a completed systematic review.
 
+## v0.3 screening engine — executable MVP step 1
+
+A **callable, hash-traced title/abstract screening runner** is now available. It records model, prompt/protocol version, temperature, source input SHA-256, output schema and evidence quote, conservatively abstains when evidence is insufficient, and supports resuming failed/incomplete work. Provider failures are not silently converted into exclusions.
+
+To exercise all code without a key or external calls:
+
+```bash
+python -m pip install -e '.[dev]'
+python scripts/run_llm_screening.py --provider fixture --out results/llm_demo
+python scripts/run_llm_screening.py --provider fixture --out results/llm_demo --resume
+```
+
+The **five-citation demo consists entirely of invented example records and handcrafted responses**, not live LLM output or human labels. For a real model run, select `--provider openai`, set `OPENAI_API_KEY`, and specify a supported `--model`. That mode is billable and **has not been executed by this project**. For a deterministic offline reproduction of previously *recorded* outputs, use `--provider replay --cache <run>/screening.jsonl` with matching configuration.
+
+See [engine instructions, exact outputs and failure modes](docs/llm_screening_mvp.md). This component does **not** change the original 538 AI-assisted recommendations and does not claim independently measured classification accuracy. An independent benchmark is MVP step 2.
+
 ## v0.2: search-derived candidate corpus
 
 On 7 October 2026, six OpenAlex title/abstract query arms retrieved the top 100 relevance-ranked records for:
