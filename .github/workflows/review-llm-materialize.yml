@@ -1,0 +1,75 @@
+name: Materialize reviewed screening runner (temporary)
+on:
+  push:
+    branches: [feature/reproducible-llm-screening-v0-3]
+    paths:
+      - .github/workflows/review-llm-materialize.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Check and extract exact source bundle
+        run: |
+          cat .github/llm_payload/part01.b64 .github/llm_payload/part02.b64 .github/llm_payload/part03.b64 .github/llm_payload/part04a.b64 .github/llm_payload/part04b.b64 .github/llm_payload/part04c.b64 .github/llm_payload/part04d.b64 | base64 -d > /tmp/synthsift_mvp.tar.gz
+          printf '%s  %s\n' '1cbea218675cad14f6e8c4fb2a9cd065b685721b5050e2877b0ac32ac9982fa2' /tmp/synthsift_mvp.tar.gz | sha256sum -c -
+          tar -xzf /tmp/synthsift_mvp.tar.gz
+      - name: Integrate with existing README and CI
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          readme=Path('README.md')
+          existing=readme.read_text(encoding='utf8')
+          marker='## v0.2: search-derived candidate corpus'
+          assert marker in existing
+          assert '## v0.3 screening engine' not in existing
+          readme.write_text(existing.replace(marker, Path('README_section.txt').read_text(encoding='utf8') + marker, 1), encoding='utf8')
+          pkg=Path('pyproject.toml')
+          text=pkg.read_text(encoding='utf8')
+          assert 'version = "0.2.0"' in text
+          pkg.write_text(text.replace('version = "0.2.0"', 'version = "0.3.0"', 1), encoding='utf8')
+          workflow=Path('.github/workflows/ci.yml')
+          body=workflow.read_text(encoding='utf8')
+          anchor='      - name: Rebuild deterministic screening samples'
+          assert anchor in body
+          extra="""      - name: Offline LLM screening demo (no external API calls)
+            run: |
+              python scripts/run_llm_screening.py --provider fixture --out "${{ runner.temp }}/llm-fixture"
+              python scripts/run_llm_screening.py --provider fixture --out "${{ runner.temp }}/llm-fixture" --resume
+              python scripts/run_llm_screening.py --provider replay --model synthetic-fixture-v1 --cache "${{ runner.temp }}/llm-fixture/screening.jsonl" --out "${{ runner.temp }}/llm-replay"
+
+          """
+          body=body.replace(anchor,extra+anchor,1)
+          # Dedent the executable line to the existing GitHub Actions YAML shape.
+          body=body.replace('            run: |\n              python scripts/run_llm_screening.py', '        run: |\n          python scripts/run_llm_screening.py')
+          body=body.replace('              python scripts/run_llm_screening.py', '          python scripts/run_llm_screening.py')
+          workflow.write_text(body,encoding='utf8')
+          Path('.gitignore').write_text(Path('.gitignore.new').read_text(),encoding='utf8')
+          Path('README_section.txt').unlink()
+          Path('.gitignore.new').unlink()
+          PY
+      - name: Validate new engine from fresh installation
+        run: |
+          python -m pip install -e '.[dev]'
+          python -m compileall -q src/synthsift/llm_runner.py scripts/run_llm_screening.py
+          python -m pytest -q tests/test_llm_runner.py
+          python scripts/run_llm_screening.py --provider fixture --out "${{ runner.temp }}/run1"
+          python scripts/run_llm_screening.py --provider fixture --out "${{ runner.temp }}/run1" --resume
+          python scripts/run_llm_screening.py --provider replay --model synthetic-fixture-v1 --cache "${{ runner.temp }}/run1/screening.jsonl" --out "${{ runner.temp }}/replay1"
+          python scripts/audit_full_corpus_ai_screening.py --check
+      - name: Commit new application source only to review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/synthsift/llm_runner.py scripts/run_llm_screening.py config/llm_screening_v1.json docs/llm_screening_system_v1.txt docs/llm_screening_mvp.md data/llm_demo tests/test_llm_runner.py README.md pyproject.toml .gitignore .github/workflows/ci.yml
+          git commit -m "Implement traceable, cached and callable LLM screening v0.3"
+          git push
