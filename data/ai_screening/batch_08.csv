@@ -3,7 +3,7 @@ candidate_id,decision,reason,reviewer
 "OA0480","exclude","Operational heat-pump dispatch and thermal comfort optimisation after installation.",ai_assistant_gpt6_20261020
 "OA0481","exclude","Tropical-cyclone ocean heat uptake, not heat-pump adoption.",ai_assistant_gpt6_20261020
 "OA0482","exclude","Effect of humidity on domestic heat-pump exergy efficiency.",ai_assistant_gpt6_20261020
-"OA0483","uncertain","Acoustic/vibration engineering constraints may hinder domestic installation, but adoption determinant is not directly studied in excerpt.",ai_assistant_gpt6_20261020
+"OA0483","exclude","Acoustic/vibration design and installation engineering review; adoption trends are context rather than evaluated household uptake determinants.","ai_assistant_gpt6_20261020"
 "OA0484","exclude","Passenger-car reversible heat-pump technical development.",ai_assistant_gpt6_20261020
 "OA0485","exclude","Field performance of installed domestic heat-pump water heaters; adoption context is background.",ai_assistant_gpt6_20261020
 "OA0486","uncertain","Household ground-source heat-pump life-cycle costs considered, but distinct adoption decision not established.",ai_assistant_gpt6_20261020
