@@ -14,7 +14,7 @@ candidate_id,decision,reason,reviewer
 "OA0183","exclude","Post-installation household rebound and energy consumption effects.",ai_assistant_gpt6_20261020
 "OA0184","exclude","Title concerns user behaviour, satisfaction and performance after installation, not adoption decision.",ai_assistant_gpt6_20261020
 "OA0185","exclude","Implementation strategy for an organizational test centre, not residential adoption.",ai_assistant_gpt6_20261020
-"OA0186","uncertain","Installer trade report may concern workforce deployment bottlenecks but title/abstract excerpt insufficient to establish determinant.",ai_assistant_gpt6_20261020
+"OA0186","include","Lengthy Irish plumber field report examines installation workforce and market constraints relevant to domestic ground-source heat-pump deployment.","ai_assistant_gpt6_20261020"
 "OA0187","exclude","Condenser-coil engineering simulation.",ai_assistant_gpt6_20261020
 "OA0188","exclude","Adsorption-material research.",ai_assistant_gpt6_20261020
 "OA0189","exclude","Thermostat learning control for operating heat pumps.",ai_assistant_gpt6_20261020
@@ -24,7 +24,7 @@ candidate_id,decision,reason,reviewer
 "OA0196","uncertain","Domestic heat-pump future overview title without identifiable adoption determinant.",ai_assistant_gpt6_20261020
 "OA0197","exclude","Optimisation of already installed household PV/heat-pump system operation.",ai_assistant_gpt6_20261020
 "OA0198","include","Historical consumer education and public acceptance of domestic heat-pump water heaters are adoption-related.",ai_assistant_gpt6_20261020
-"OA0199","uncertain","Cold-weather performance constraints framed as adoption barriers; abstract lacks analysis connecting physics to residential deployment.",ai_assistant_gpt6_20261020
+"OA0199","exclude","Only derives cold-day thermal-performance bounds; no adoption behaviour or institutional determinant analysed.","ai_assistant_gpt6_20261020"
 "OA0201","include","Market assessment and energy-policy adjustments for air-source heat-pump adoption in cold regions.",ai_assistant_gpt6_20261020
 "OA0202","exclude","Theoretical design and optimisation of adsorption heat pumps.",ai_assistant_gpt6_20261020
 "OA0204","exclude","Impacts of assumed widespread uptake on grid reinforcement and tariff equity, not uptake determinants.",ai_assistant_gpt6_20261020
