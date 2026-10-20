@@ -80,7 +80,14 @@ def fake_run(tmp, recs, decisions=("include", "exclude", "exclude", "uncertain")
                 "candidate_id": r["candidate_id"], "title": r["title"], "abstract": r["abstract"]
             })), "model": model, "temperature": 0.0, "prompt_version": "test-v1",
             "prompt_sha256": prompt_sha,
-            "output": {"decision": decision, "abstain": decision == "uncertain"}
+            "output": {
+                "decision": decision,
+                "reason_category": "insufficient_evidence" if decision == "uncertain"
+                                   else "adoption_determinants",
+                "reason": "Synthetic test case for evaluator control logic, not an LLM response.",
+                "evidence_span": "" if decision == "uncertain" else r["title"],
+                "abstain": decision == "uncertain",
+            }
         })
     (out / "screening.jsonl").write_text(
         "\n".join(canonical(r) for r in payload) + "\n", encoding="utf-8"
