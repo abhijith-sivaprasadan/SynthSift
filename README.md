@@ -41,6 +41,12 @@ The search protocol is frozen in [`protocols/search_protocol_v1.md`](protocols/s
 
 This is a ranked-search **candidate corpus**, not an exhaustive systematic-search strategy.
 
+## AI-assisted Phase-1 screening (separate from human reference)
+
+On 20 October 2026 an AI assistant completed an auditable **first-pass recommendation for all 240 sampled records**, following the frozen adoption protocol. The breakdown is **55 include, 158 exclude, 27 uncertain**. This was title/available-abstract screening with source excerpts and additional full-abstract checks of selected borderline cases, not independent human screening.
+
+The eight committed recommendation batches are under [`data/ai_screening/`](data/ai_screening/README.md) and contain a protocol-grounded reason per record. Run `python scripts/audit_ai_screening.py --out results/ai_first_pass` for a checked combined report and priority list. The 96-record blinded second-human-review subset, final reference labels and full-text decisions **remain outstanding**. AI recommendations are never silently exported to `data/labels/` or used as gold labels for model performance claims.
+
 ## Human reference screening
 
 A deterministic **240-record Phase-1 sample** has now been frozen from the 538-record search corpus. Sampling is proportional across abstract availability and OpenAlex rank bands and uses **no ML/LLM predictions**.
@@ -159,7 +165,7 @@ SynthSift keeps several boundaries explicit:
 
 ## Current limitations
 
-The search-derived corpus still needs reference screening. It is OpenAlex-only and relevance-ranked rather than an exhaustive multi-database systematic search. The current reference labels in the pilot have not undergone dual independent screening and adjudication. No real LLM comparison is reported yet.
+The search-derived corpus now has an AI-assisted first-pass sample screen, but still needs independent human reference screening. It is OpenAlex-only and relevance-ranked rather than an exhaustive multi-database systematic search. The current reference labels in the pilot have not undergone dual independent screening and adjudication. No real LLM comparison is reported yet.
 
 Those are now explicit next research steps rather than hidden weaknesses.
 
