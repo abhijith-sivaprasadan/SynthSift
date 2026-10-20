@@ -26,6 +26,6 @@ candidate_id,decision,reason,reviewer
 "OA0165","include","Existing-building substitution opportunities and practical conditions constraining heating technology adoption.",ai_assistant_gpt6_20261020
 "OA0166","exclude","Industrial high-temperature process-heat-pump technology review.",ai_assistant_gpt6_20261020
 "OA0167","include","Multicountry behavioural survey examines willingness to adopt a heat-pump-inclusive residential hybrid system.",ai_assistant_gpt6_20261020
-"OA0168","uncertain","Bibliometric review addresses heat-pump challenges generally; not clearly determinants of residential uptake.",ai_assistant_gpt6_20261020
+"OA0168","include","Bibliometric review explicitly synthesises financial, regulatory, groundwater and subsidy barriers affecting ground-source heat-pump diffusion.","ai_assistant_gpt6_20261020"
 "OA0169","exclude","Studies post-uptake building load profiles and financial impacts, not adoption decisions.",ai_assistant_gpt6_20261020
 "OA0170","exclude","Experimental performance improvement of small household heat-pump unit.",ai_assistant_gpt6_20261020
