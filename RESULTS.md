@@ -30,6 +30,14 @@ The source-derived outputs are [the full screening ledger](data/ai_screening/ful
 
 **These are descriptive machine recommendations only.** No independent human eligibility review, blind 96-record second review, human adjudication, full-text synthesis or screening-model validation against human gold labels is claimed. The corpus is OpenAlex-only relevance-ranked retrieval, not an exhaustive search. Screening used source titles and available abstract excerpts, with full-abstract review for selected borderline records; conclusions should not be treated as final eligibility decisions.
 
+## Study-level metadata/source preflight (not full-text study review)
+
+After the 538-record AI pass, we prepared a **538-record bibliographic locator inventory**, 29 unresolved potential-version families spanning 66 source records, an unextracted list of 197 AI include/uncertain records, and a 341-record independent exclusion-audit queue. **87** title-only provisional inclusion/uncertainty records need external source material. These are *worklists*, not verified papers, human eligibility labels, or effect extractions.
+
+A title-cue audit of eight potential false negatives revealed **OA0443**, which was machine-excluded on title-only evidence even though its publicly available publisher abstract studies choices of 985 prospective flexible-heat-pump adopters. A separately attributed second AI recommendation is `include`; the historical v1 status remains unchanged and still requires independent review.
+
+See [source preflight and boundaries](docs/next_stage_evidence_preflight.md). The preflight does not establish model precision/recall, real full-text availability, a distinct-study count, or research findings.
+
 ## Phase-1 AI-assisted triage — 20 October 2026
 
 All 240 records of the prespecified Phase-1 sample have a model-assisted `include` (55), `exclude` (158) or `uncertain` (27) recommendation with a written protocol-grounded reason. This sample contains 93 title-only records and 147 with source abstract text. Review used title/abstract excerpts and full abstracts for selected ambiguous cases; it is **not** an independent human eligibility reference. No study inclusion, model sensitivity/specificity, reviewer agreement or full-corpus prevalence inference is made from these recommendations. See [AI screening methods and limits](data/ai_screening/README.md).
