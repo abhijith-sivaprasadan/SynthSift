@@ -11,23 +11,7 @@ from pathlib import Path
 import pandas as pd
 
 from synthsift.full_corpus_review import ROOT, read_csv
-from synthsift.review_preparation import OUT, build_review_packs
-
-
-def blind_reference_packets(destination: Path) -> None:
-    """Source-only exports without AI recommendations or internal screening reasons."""
-    sample = read_csv(ROOT / "data/samples/phase1_screening_sample_240.csv")
-    cols = [
-        "candidate_id", "title", "abstract", "abstract_missing", "doi", "openalex_id",
-        "publication_year", "work_type", "language", "best_rank",
-    ]
-    if not all(sample[c].eq("").all() for c in ["decision", "reason", "reviewer"]):
-        raise ValueError("Frozen human reference sample unexpectedly contains decisions")
-    sample[cols].to_csv(destination / "blind_first_review_240.csv", index=False)
-    second = sample.loc[sample["second_review_sample"].eq("1"), cols]
-    if len(second) != 96:
-        raise ValueError("Frozen second-review subset changed")
-    second.to_csv(destination / "blind_second_review_96.csv", index=False)
+from synthsift.review_preparation import OUT, build_review_packs, blind_reference_packets
 
 
 def main() -> None:
