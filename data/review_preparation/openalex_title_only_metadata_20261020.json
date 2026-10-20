@@ -1,0 +1,10 @@
+{
+  "source": "Live OpenAlex metadata-only lookups (not publisher/full-text retrieval)",
+  "checked_utc": "2026-10-20T17:13:08+00:00",
+  "records_attempted": 87,
+  "metadata_returned": 82,
+  "abstract_metadata_now_present": 0,
+  "checks_not_successful": 5,
+  "full_text_read_or_verified": 0,
+  "machine_eligibility_reclassification_performed": 0
+}
