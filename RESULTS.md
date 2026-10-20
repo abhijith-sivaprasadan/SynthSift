@@ -15,6 +15,21 @@ Exact deduplication uses DOI where present and OpenAlex ID otherwise. Potential 
 
 This corpus is a ranked-search pilot, not an exhaustive systematic-review search.
 
+## Full 538-record AI first-pass screening — 20 October 2026
+
+| AI recommendation | Source records |
+|---|---:|
+| Include | 144 |
+| Exclude | 341 |
+| Uncertain | 53 |
+| **Total** | **538** |
+
+Of these 538 records, 240 retain their prior Phase-1 AI recommendations and 298 received individual additional recommendations. The snapshot includes **330 source records with abstracts and 208 title-only records**. There are **150 unique priority rechecks**, flagged by one or more of: uncertainty, possible bibliographic version duplication (66 records), or an include recommendation made on title alone (51 records). Categories overlap.
+
+The source-derived outputs are [the full screening ledger](data/ai_screening/full_corpus_ai_assisted_v1.csv), [priority rechecks](data/ai_screening/full_corpus_review_priority_v1.csv) and [reproducibility audit](scripts/audit_full_corpus_ai_screening.py). The records are not all distinct studies: 29 potential version clusters in the original acquisition need adjudication.
+
+**These are descriptive machine recommendations only.** No independent human eligibility review, blind 96-record second review, human adjudication, full-text synthesis or screening-model validation against human gold labels is claimed. The corpus is OpenAlex-only relevance-ranked retrieval, not an exhaustive search. Screening used source titles and available abstract excerpts, with full-abstract review for selected borderline records; conclusions should not be treated as final eligibility decisions.
+
 ## Phase-1 AI-assisted triage — 20 October 2026
 
 All 240 records of the prespecified Phase-1 sample have a model-assisted `include` (55), `exclude` (158) or `uncertain` (27) recommendation with a written protocol-grounded reason. This sample contains 93 title-only records and 147 with source abstract text. Review used title/abstract excerpts and full abstracts for selected ambiguous cases; it is **not** an independent human eligibility reference. No study inclusion, model sensitivity/specificity, reviewer agreement or full-corpus prevalence inference is made from these recommendations. See [AI screening methods and limits](data/ai_screening/README.md).
