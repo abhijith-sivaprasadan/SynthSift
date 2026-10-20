@@ -1,31 +1,31 @@
 candidate_id,decision,reason,reviewer
-"OA0171","include","Models subsidy effects on residential adoption rates and emissions."
-"OA0172","exclude","Household appliance energy-efficiency design, not heating adoption."
-"OA0173","uncertain","Title implies heat-pump decarbonisation scenario but not clearly an adoption-determinant study."
-"OA0174","exclude","Refrigerant replacement experiments on tumble dryers."
-"OA0175","exclude","Industrial high-temperature heat-pump economics, outside residential scope."
-"OA0176","include","Household decision dynamics for adoption of residential ground-source heating."
-"OA0177","include","Title explicitly identifies model-predictive control as a barrier-reduction mechanism for water-heater adoption."
-"OA0178","exclude","Consumers adopting generic smart-grid technology, not heat pumps."
-"OA0179","exclude","Industrial high-temperature process-heat-pump adoption."
-"OA0180","include","Domestic gas-heat-pump market potential, support measures and market barriers."
-"OA0181","exclude","Field trial focuses on installed heat-pump performance and user practices."
-"OA0182","exclude","Electricity-grid storage requirements from assumed uptake, not determinants of uptake."
-"OA0183","exclude","Post-installation household rebound and energy consumption effects."
-"OA0184","exclude","Title concerns user behaviour, satisfaction and performance after installation, not adoption decision."
-"OA0185","exclude","Implementation strategy for an organizational test centre, not residential adoption."
-"OA0186","uncertain","Installer trade report may concern workforce deployment bottlenecks but title/abstract excerpt insufficient to establish determinant."
-"OA0187","exclude","Condenser-coil engineering simulation."
-"OA0188","exclude","Adsorption-material research."
-"OA0189","exclude","Thermostat learning control for operating heat pumps."
-"OA0190","exclude","Adsorbent composites, not adoption determinants."
-"OA0194","exclude","Household willingness to pay for district heating rather than heat-pump choice."
-"OA0195","exclude","Post-retrofit thermal comfort and electricity consumption, not household adoption decisions."
-"OA0196","uncertain","Domestic heat-pump future overview title without identifiable adoption determinant."
-"OA0197","exclude","Optimisation of already installed household PV/heat-pump system operation."
-"OA0198","include","Historical consumer education and public acceptance of domestic heat-pump water heaters are adoption-related."
-"OA0199","uncertain","Cold-weather performance constraints framed as adoption barriers; abstract lacks analysis connecting physics to residential deployment."
-"OA0201","include","Market assessment and energy-policy adjustments for air-source heat-pump adoption in cold regions."
-"OA0202","exclude","Theoretical design and optimisation of adsorption heat pumps."
-"OA0204","exclude","Impacts of assumed widespread uptake on grid reinforcement and tariff equity, not uptake determinants."
-"OA0206","include","Infrastructure barriers to heat-pump installation in older buildings and an approach to overcome them."
+"OA0171","include","Models subsidy effects on residential adoption rates and emissions.",ai_assistant_gpt6_20261020
+"OA0172","exclude","Household appliance energy-efficiency design, not heating adoption.",ai_assistant_gpt6_20261020
+"OA0173","uncertain","Title implies heat-pump decarbonisation scenario but not clearly an adoption-determinant study.",ai_assistant_gpt6_20261020
+"OA0174","exclude","Refrigerant replacement experiments on tumble dryers.",ai_assistant_gpt6_20261020
+"OA0175","exclude","Industrial high-temperature heat-pump economics, outside residential scope.",ai_assistant_gpt6_20261020
+"OA0176","include","Household decision dynamics for adoption of residential ground-source heating.",ai_assistant_gpt6_20261020
+"OA0177","include","Title explicitly identifies model-predictive control as a barrier-reduction mechanism for water-heater adoption.",ai_assistant_gpt6_20261020
+"OA0178","exclude","Consumers adopting generic smart-grid technology, not heat pumps.",ai_assistant_gpt6_20261020
+"OA0179","exclude","Industrial high-temperature process-heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0180","include","Domestic gas-heat-pump market potential, support measures and market barriers.",ai_assistant_gpt6_20261020
+"OA0181","exclude","Field trial focuses on installed heat-pump performance and user practices.",ai_assistant_gpt6_20261020
+"OA0182","exclude","Electricity-grid storage requirements from assumed uptake, not determinants of uptake.",ai_assistant_gpt6_20261020
+"OA0183","exclude","Post-installation household rebound and energy consumption effects.",ai_assistant_gpt6_20261020
+"OA0184","exclude","Title concerns user behaviour, satisfaction and performance after installation, not adoption decision.",ai_assistant_gpt6_20261020
+"OA0185","exclude","Implementation strategy for an organizational test centre, not residential adoption.",ai_assistant_gpt6_20261020
+"OA0186","uncertain","Installer trade report may concern workforce deployment bottlenecks but title/abstract excerpt insufficient to establish determinant.",ai_assistant_gpt6_20261020
+"OA0187","exclude","Condenser-coil engineering simulation.",ai_assistant_gpt6_20261020
+"OA0188","exclude","Adsorption-material research.",ai_assistant_gpt6_20261020
+"OA0189","exclude","Thermostat learning control for operating heat pumps.",ai_assistant_gpt6_20261020
+"OA0190","exclude","Adsorbent composites, not adoption determinants.",ai_assistant_gpt6_20261020
+"OA0194","exclude","Household willingness to pay for district heating rather than heat-pump choice.",ai_assistant_gpt6_20261020
+"OA0195","exclude","Post-retrofit thermal comfort and electricity consumption, not household adoption decisions.",ai_assistant_gpt6_20261020
+"OA0196","uncertain","Domestic heat-pump future overview title without identifiable adoption determinant.",ai_assistant_gpt6_20261020
+"OA0197","exclude","Optimisation of already installed household PV/heat-pump system operation.",ai_assistant_gpt6_20261020
+"OA0198","include","Historical consumer education and public acceptance of domestic heat-pump water heaters are adoption-related.",ai_assistant_gpt6_20261020
+"OA0199","uncertain","Cold-weather performance constraints framed as adoption barriers; abstract lacks analysis connecting physics to residential deployment.",ai_assistant_gpt6_20261020
+"OA0201","include","Market assessment and energy-policy adjustments for air-source heat-pump adoption in cold regions.",ai_assistant_gpt6_20261020
+"OA0202","exclude","Theoretical design and optimisation of adsorption heat pumps.",ai_assistant_gpt6_20261020
+"OA0204","exclude","Impacts of assumed widespread uptake on grid reinforcement and tariff equity, not uptake determinants.",ai_assistant_gpt6_20261020
+"OA0206","include","Infrastructure barriers to heat-pump installation in older buildings and an approach to overcome them.",ai_assistant_gpt6_20261020
