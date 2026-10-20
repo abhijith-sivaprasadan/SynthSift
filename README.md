@@ -60,6 +60,8 @@ A targeted second-pass check of eight conspicuous machine exclusions found one m
 
 Rebuild with `python scripts/prepare_review_evidence.py --check`. Export source-only blind packets for eventual independent human reviewers with `python scripts/prepare_review_evidence.py --out results/reviewer_pack --export-blind`.
 
+**Live source metadata recheck:** 87 title-only high-priority OpenAlex work IDs were queried on 20 October; 82 returned metadata, none returned a newly available abstract, and five returned 404. No full-text accessibility has been demonstrated. Details: [study-level evidence preflight](docs/next_stage_evidence_preflight.md) and [per-record OpenAlex checks](data/review_preparation/openalex_title_only_metadata_20261020.csv).
+
 ## AI-assisted Phase-1 screening (separate from human reference)
 
 On 20 October 2026 an AI assistant completed an auditable **first-pass recommendation for all 240 sampled records**, following the frozen adoption protocol. The breakdown is **55 include, 158 exclude, 27 uncertain**. This was title/available-abstract screening with source excerpts and additional full-abstract checks of selected borderline cases, not independent human screening.
