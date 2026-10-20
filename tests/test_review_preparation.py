@@ -5,7 +5,7 @@ import pandas as pd
 
 from synthsift.full_corpus_review import ROOT, read_csv
 from synthsift.review_preparation import OUT, build_review_packs
-from scripts.prepare_review_evidence import blind_reference_packets
+from synthsift.review_preparation import blind_reference_packets
 
 
 def test_all_candidates_covered_without_pretending_full_text_access():
