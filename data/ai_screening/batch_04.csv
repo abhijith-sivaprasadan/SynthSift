@@ -20,7 +20,7 @@ candidate_id,decision,reason,reviewer
 "OA0239","uncertain","Guidebook covers consumer assistance and incentives; residential adoption analyses not clearly established.",ai_assistant_gpt6_20261020
 "OA0248","exclude","Main contribution is diagnostics and performance prediction of installed retrofits, not adoption determinants.",ai_assistant_gpt6_20261020
 "OA0249","exclude","District-heating network heat costs with booster pumps; no household heat-pump choice.",ai_assistant_gpt6_20261020
-"OA0252","uncertain","Households' heating replacement intentions studied, but heat-pump option is not explicit in available excerpt.",ai_assistant_gpt6_20261020
+"OA0252","include","Polish 1007-response household survey directly quantifies retrofit willingness and explicitly distinguishes heat-pump uptake intentions, financing and subsidy barriers.","ai_assistant_gpt6_20261020"
 "OA0253","include","Pre-registered behavioural experiment directly tests heat-pump adoption messaging.",ai_assistant_gpt6_20261020
 "OA0254","exclude","Measured electricity-consumption dataset of already-installed household heat pumps.",ai_assistant_gpt6_20261020
 "OA0255","exclude","Household heat-pump water-heater consumption model, not adoption decision.",ai_assistant_gpt6_20261020
