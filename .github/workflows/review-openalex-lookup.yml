@@ -25,6 +25,14 @@ jobs:
           python scripts/prepare_review_evidence.py --check
           python scripts/refresh_title_only_sources.py --allow-live --limit 87 --out data/review_preparation/openalex_title_only_metadata_20261020.csv
           python -m pytest -q tests/test_source_refresh.py tests/test_review_preparation.py
+      - name: Preserve metadata report as review artifact even if push fails
+        uses: actions/upload-artifact@v4
+        with:
+          name: openalex-title-only-lookup-20261020
+          path: |
+            data/review_preparation/openalex_title_only_metadata_20261020.csv
+            data/review_preparation/openalex_title_only_metadata_20261020.json
+
       - name: Commit identity-checked metadata flags and source links
         run: |
           git config user.name "github-actions[bot]"
@@ -32,5 +40,6 @@ jobs:
           git add data/review_preparation/openalex_title_only_metadata_20261020.csv data/review_preparation/openalex_title_only_metadata_20261020.json
           if ! git diff --cached --quiet; then
             git commit -m "Record live OpenAlex metadata availability for 87 title-only review-priority candidates"
+            git pull --rebase origin "$GITHUB_REF_NAME"
             git push
           fi
