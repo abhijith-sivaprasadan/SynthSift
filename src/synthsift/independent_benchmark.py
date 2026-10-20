@@ -10,7 +10,7 @@ import json
 import math
 from pathlib import Path
 
-from synthsift.llm_runner import canonical, digest
+from synthsift.llm_runner import canonical, digest, validate_response
 
 BINARY = {"include", "exclude"}
 
@@ -145,11 +145,7 @@ def evaluate(sample_path: Path, reference_path: Path, manifest_path: Path,
             raise ValueError(f"{key}: prompt fingerprint differs from run_config")
         if p.get("status") == "ok":
             output = p.get("output")
-            if not isinstance(output, dict) or output.get("decision") not in {
-                "include", "exclude", "uncertain"
-            } or output.get("abstain") is not (output["decision"] == "uncertain"):
-                raise ValueError(f"{key}: malformed decision or abstention")
-            decision = output["decision"]
+            decision = validate_response(output, source)["decision"]
         elif p.get("status") == "error" and p.get("output") is None:
             decision = "error"
         else:
