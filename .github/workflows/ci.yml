@@ -65,6 +65,9 @@ jobs:
       - name: Verify all 538 AI-only source-linked decisions and priority flags
         run: python scripts/audit_full_corpus_ai_screening.py --check
 
+      - name: Verify next-stage bibliographic evidence preparation
+        run: python scripts/prepare_review_evidence.py --check
+
       - name: Extraction benchmark smoke test
         run: python scripts/run_extraction_benchmark.py
 
