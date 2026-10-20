@@ -1,31 +1,31 @@
 candidate_id,decision,reason,reviewer
-"OA0062","exclude","Control optimisation for operating a two-stage ammonia heat pump, not residential adoption."
-"OA0063","include","Household questionnaire and focus groups identify information and other barriers to adoption."
-"OA0064","include","Canadian homeowner survey identifies adoption-related market segments and determinants."
-"OA0065","include","Socioeconomic, governance and policy barriers to shared residential ground-source heat pumps."
-"OA0066","exclude","Adsorption materials kinetics, not residential adoption."
-"OA0067","uncertain","Consumer-oriented technology survey includes economics but does not explicitly study adoption decisions."
-"OA0068","exclude","High-temperature household water-heater hardware title; no adoption determinant."
-"OA0069","exclude","Efficiency of appliances incorporating heat-pump hardware, not residential heating adoption."
-"OA0100","include","Four-country stakeholder study of heat-pump market uptake and deployment barriers."
-"OA0101","include","Canadian homeowner market segments and willingness to purchase heat pumps."
-"OA0102","exclude","Operational efficiency of ground-source systems based on consumption modes."
-"OA0103","uncertain","Broad domestic heat-pump review includes commercial aspects; unclear whether adoption determinants analysed."
-"OA0104","include","Explicit residential adoption and agent-based policy assessment."
-"OA0105","exclude","Industrial heat electrification and process heat-pump adoption, not residential."
-"OA0106","include","Residential consumer heat-pump choice projections and drivers assessed in energy-system model."
-"OA0107","exclude","Household heat-pump tumble-dryer leakage and energy efficiency study."
-"OA0108","uncertain","Consumer ownership costs of standards assessed, but actual heat-pump selection or uptake not demonstrated."
-"OA0109","exclude","Economic model-predictive control of an already-installed household heat pump."
-"OA0110","include","Homeowner leasing-versus-purchase preferences and willingness to pay are direct financial adoption factors."
-"OA0111","exclude","Retracted thermophysical coating article without adoption content."
-"OA0112","exclude","Grid-load profiles for installed heat pumps, not determinants of household uptake."
-"OA0160","exclude","Activated-carbon adsorption material development."
-"OA0161","exclude","Hot-water heat-pump viability for large consumers, without residential adoption focus."
-"OA0164","exclude","Heat-pump control barrier-function method for equipment operation."
-"OA0165","include","Existing-building substitution opportunities and practical conditions constraining heating technology adoption."
-"OA0166","exclude","Industrial high-temperature process-heat-pump technology review."
-"OA0167","include","Multicountry behavioural survey examines willingness to adopt a heat-pump-inclusive residential hybrid system."
-"OA0168","uncertain","Bibliometric review addresses heat-pump challenges generally; not clearly determinants of residential uptake."
-"OA0169","exclude","Studies post-uptake building load profiles and financial impacts, not adoption decisions."
-"OA0170","exclude","Experimental performance improvement of small household heat-pump unit."
+"OA0062","exclude","Control optimisation for operating a two-stage ammonia heat pump, not residential adoption.",ai_assistant_gpt6_20261020
+"OA0063","include","Household questionnaire and focus groups identify information and other barriers to adoption.",ai_assistant_gpt6_20261020
+"OA0064","include","Canadian homeowner survey identifies adoption-related market segments and determinants.",ai_assistant_gpt6_20261020
+"OA0065","include","Socioeconomic, governance and policy barriers to shared residential ground-source heat pumps.",ai_assistant_gpt6_20261020
+"OA0066","exclude","Adsorption materials kinetics, not residential adoption.",ai_assistant_gpt6_20261020
+"OA0067","uncertain","Consumer-oriented technology survey includes economics but does not explicitly study adoption decisions.",ai_assistant_gpt6_20261020
+"OA0068","exclude","High-temperature household water-heater hardware title; no adoption determinant.",ai_assistant_gpt6_20261020
+"OA0069","exclude","Efficiency of appliances incorporating heat-pump hardware, not residential heating adoption.",ai_assistant_gpt6_20261020
+"OA0100","include","Four-country stakeholder study of heat-pump market uptake and deployment barriers.",ai_assistant_gpt6_20261020
+"OA0101","include","Canadian homeowner market segments and willingness to purchase heat pumps.",ai_assistant_gpt6_20261020
+"OA0102","exclude","Operational efficiency of ground-source systems based on consumption modes.",ai_assistant_gpt6_20261020
+"OA0103","uncertain","Broad domestic heat-pump review includes commercial aspects; unclear whether adoption determinants analysed.",ai_assistant_gpt6_20261020
+"OA0104","include","Explicit residential adoption and agent-based policy assessment.",ai_assistant_gpt6_20261020
+"OA0105","exclude","Industrial heat electrification and process heat-pump adoption, not residential.",ai_assistant_gpt6_20261020
+"OA0106","include","Residential consumer heat-pump choice projections and drivers assessed in energy-system model.",ai_assistant_gpt6_20261020
+"OA0107","exclude","Household heat-pump tumble-dryer leakage and energy efficiency study.",ai_assistant_gpt6_20261020
+"OA0108","uncertain","Consumer ownership costs of standards assessed, but actual heat-pump selection or uptake not demonstrated.",ai_assistant_gpt6_20261020
+"OA0109","exclude","Economic model-predictive control of an already-installed household heat pump.",ai_assistant_gpt6_20261020
+"OA0110","include","Homeowner leasing-versus-purchase preferences and willingness to pay are direct financial adoption factors.",ai_assistant_gpt6_20261020
+"OA0111","exclude","Retracted thermophysical coating article without adoption content.",ai_assistant_gpt6_20261020
+"OA0112","exclude","Grid-load profiles for installed heat pumps, not determinants of household uptake.",ai_assistant_gpt6_20261020
+"OA0160","exclude","Activated-carbon adsorption material development.",ai_assistant_gpt6_20261020
+"OA0161","exclude","Hot-water heat-pump viability for large consumers, without residential adoption focus.",ai_assistant_gpt6_20261020
+"OA0164","exclude","Heat-pump control barrier-function method for equipment operation.",ai_assistant_gpt6_20261020
+"OA0165","include","Existing-building substitution opportunities and practical conditions constraining heating technology adoption.",ai_assistant_gpt6_20261020
+"OA0166","exclude","Industrial high-temperature process-heat-pump technology review.",ai_assistant_gpt6_20261020
+"OA0167","include","Multicountry behavioural survey examines willingness to adopt a heat-pump-inclusive residential hybrid system.",ai_assistant_gpt6_20261020
+"OA0168","uncertain","Bibliometric review addresses heat-pump challenges generally; not clearly determinants of residential uptake.",ai_assistant_gpt6_20261020
+"OA0169","exclude","Studies post-uptake building load profiles and financial impacts, not adoption decisions.",ai_assistant_gpt6_20261020
+"OA0170","exclude","Experimental performance improvement of small household heat-pump unit.",ai_assistant_gpt6_20261020
