@@ -1,0 +1,18 @@
+{
+  "source": "frozen OpenAlex 2026-10-07; AI first pass 2026-10-20",
+  "status": "review preparation, not human adjudication or full-text acquisition",
+  "source_inventory": 538,
+  "potential_version_clusters": 29,
+  "clustered_candidate_records": 66,
+  "clusters_with_discordant_AI_recommendations": 1,
+  "candidate_records_pending_evidence_extraction": 197,
+  "ai_includes": 144,
+  "ai_uncertain": 53,
+  "candidate_records_needing_source_recheck": 87,
+  "ai_exclusions_awaiting_independent_false_negative_audit": 341,
+  "ai_exclusions_with_both_adoption_and_household_title_cues": 8,
+  "full_text_verified": 0,
+  "study_level_deduplications_adjudicated": 0,
+  "independent_human_reference_review_complete": false,
+  "independent_second_review_complete": false
+}
