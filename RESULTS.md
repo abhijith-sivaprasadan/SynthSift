@@ -15,6 +15,12 @@ Exact deduplication uses DOI where present and OpenAlex ID otherwise. Potential 
 
 This corpus is a ranked-search pilot, not an exhaustive systematic-review search.
 
+## Phase-1 AI-assisted triage — 20 October 2026
+
+All 240 records of the prespecified Phase-1 sample have a model-assisted `include` (55), `exclude` (158) or `uncertain` (27) recommendation with a written protocol-grounded reason. This sample contains 93 title-only records and 147 with source abstract text. Review used title/abstract excerpts and full abstracts for selected ambiguous cases; it is **not** an independent human eligibility reference. No study inclusion, model sensitivity/specificity, reviewer agreement or full-corpus prevalence inference is made from these recommendations. See [AI screening methods and limits](data/ai_screening/README.md).
+
+The 96 blinded second-review records remain reserved for independent human assessment; the remaining 298 of the 538 OpenAlex candidates were not part of this Phase-1 AI review.
+
 ## v0.1 provenance-clean pilot screening
 
 Primary benchmark: **16 records (9 include / 7 exclude)** with source-authored abstract or summary text verified against the linked public source.
