@@ -50,7 +50,7 @@ def test_reproducibility_of_committed_outputs():
     )
     pd.testing.assert_frame_equal(df, ledger, check_dtype=False)
     pd.testing.assert_frame_equal(
-        df.loc[df["priority_flags"].ne("")], priority, check_dtype=False
+        df.loc[df["priority_flags"].ne("")].reset_index(drop=True), priority, check_dtype=False
     )
     assert json.loads((DATA / "full_corpus_summary_v1.json").read_text()) == summary(df)
 
