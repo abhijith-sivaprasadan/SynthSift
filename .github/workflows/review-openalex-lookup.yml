@@ -1,0 +1,36 @@
+name: Review-only OpenAlex source metadata refresh
+on:
+  push:
+    branches: [review/study-level-evidence-preflight-20261020]
+    paths:
+      - .github/workflows/review-openalex-lookup.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Query current OpenAlex metadata for 87 title-only AI high-priority records
+        run: |
+          python scripts/prepare_review_evidence.py --check
+          python scripts/refresh_title_only_sources.py --allow-live --limit 87 --out data/review_preparation/openalex_title_only_metadata_20261020.csv
+          python -m pytest -q tests/test_source_refresh.py tests/test_review_preparation.py
+      - name: Commit identity-checked metadata flags and source links
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/review_preparation/openalex_title_only_metadata_20261020.csv data/review_preparation/openalex_title_only_metadata_20261020.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record live OpenAlex metadata availability for 87 title-only review-priority candidates"
+            git push
+          fi
