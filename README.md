@@ -52,6 +52,16 @@ The full **538-record ranked-search candidate corpus** has now received a title/
 
 **Scientific limit:** These are AI suggestions, not a completed systematic review, adjudicated eligibility decisions or human reference labels. The acquired 538 records are relevance-ranked OpenAlex hits (not all relevant literature), include potential bibliographic duplicates and 208 title-only records, and have not undergone complete full-text eligibility assessment. Do **not** calculate model recall, reviewer kappa, literature prevalence or workload savings against the AI's own labels. See the [full-corpus methodology](data/ai_screening/full_corpus_readme.md).
 
+## Next stage: study-level evidence/source audit
+
+The project now has a reproducible [study-level evidence preflight](docs/next_stage_evidence_preflight.md): source locators for all **538** candidates, **29 potential version families** covering 66 records, an unextracted 197-record include/uncertain follow-up queue, and a 341-record independent exclusion-audit queue. **87** provisional include/uncertain records had no abstract in the frozen snapshot and require source follow-up.
+
+A targeted second-pass check of eight conspicuous machine exclusions found one material likely false-negative, **OA0443**: the publisher abstract actually studies potential flexible heat-pump adopters' preferences and estimated market shares. The corrective AI recommendation is in [a separate audit file](data/review_preparation/targeted_exclusion_recheck_20261020.csv), leaving the frozen first-pass ledger unchanged. This is *not* human adjudication.
+
+Rebuild with `python scripts/prepare_review_evidence.py --check`. Export source-only blind packets for eventual independent human reviewers with `python scripts/prepare_review_evidence.py --out results/reviewer_pack --export-blind`.
+
+**Live source metadata recheck:** 87 title-only high-priority OpenAlex work IDs were queried on 20 October; 82 returned metadata, none returned a newly available abstract, and five returned 404. No full-text accessibility has been demonstrated. Details: [study-level evidence preflight](docs/next_stage_evidence_preflight.md) and [per-record OpenAlex checks](data/review_preparation/openalex_title_only_metadata_20261020.csv).
+
 ## AI-assisted Phase-1 screening (separate from human reference)
 
 On 20 October 2026 an AI assistant completed an auditable **first-pass recommendation for all 240 sampled records**, following the frozen adoption protocol. The breakdown is **55 include, 158 exclude, 27 uncertain**. This was title/available-abstract screening with source excerpts and additional full-abstract checks of selected borderline cases, not independent human screening.
