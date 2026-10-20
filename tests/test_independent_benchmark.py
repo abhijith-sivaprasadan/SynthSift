@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from freeze_independent_reference import freeze
 from synthsift.independent_benchmark import evaluate, sha
-from synthsift.llm_runner import canonical, digest
+from synthsift.llm_runner import canonical, digest, RESPONSE_SCHEMA
 
 
 def csv_file(path, fields, records):
@@ -66,6 +66,7 @@ def fake_run(tmp, recs, decisions=("include", "exclude", "exclude", "uncertain")
     config = {
         "model": model, "temperature": 0.0, "prompt_version": "test-v1",
         "prompt_sha256": prompt_sha,
+        "schema_sha256": digest(canonical(RESPONSE_SCHEMA)),
         "input_manifest_sha256": digest(canonical([
             {"candidate_id": r["candidate_id"], "title": r["title"], "abstract": r["abstract"]}
             for r in recs
@@ -80,6 +81,15 @@ def fake_run(tmp, recs, decisions=("include", "exclude", "exclude", "uncertain")
                 "candidate_id": r["candidate_id"], "title": r["title"], "abstract": r["abstract"]
             })), "model": model, "temperature": 0.0, "prompt_version": "test-v1",
             "prompt_sha256": prompt_sha,
+            "request_sha256": digest(canonical({
+                "input_sha256": digest(canonical({
+                    "candidate_id": r["candidate_id"], "title": r["title"],
+                    "abstract": r["abstract"]
+                })),
+                "prompt_sha256": prompt_sha,
+                "model": model, "temperature": 0.0,
+                "output_schema_sha256": digest(canonical(RESPONSE_SCHEMA)),
+            })),
             "output": {
                 "decision": decision,
                 "reason_category": "insufficient_evidence" if decision == "uncertain"
