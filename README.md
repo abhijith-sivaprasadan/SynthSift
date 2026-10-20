@@ -27,7 +27,17 @@ python scripts/run_llm_screening.py --provider fixture --out results/llm_demo --
 
 The **five-citation demo consists entirely of invented example records and handcrafted responses**, not live LLM output or human labels. For a real model run, select `--provider openai`, set `OPENAI_API_KEY`, and specify a supported `--model`. That mode is billable and **has not been executed by this project**. For a deterministic offline reproduction of previously *recorded* outputs, use `--provider replay --cache <run>/screening.jsonl` with matching configuration.
 
-See [engine instructions, exact outputs and failure modes](docs/llm_screening_mvp.md). This component does **not** change the original 538 AI-assisted recommendations and does not claim independently measured classification accuracy. An independent benchmark is MVP step 2.
+See [engine instructions, exact outputs and failure modes](docs/llm_screening_mvp.md). This component does **not** change the original 538 AI-assisted recommendations and does not claim independently measured classification accuracy. The MVP step-2 independent evaluation tooling is now implemented, but no human-reviewed/live-model accuracy results exist yet.
+
+## v0.4 independent evaluation framework — implemented, NOT YET EMPIRICALLY SCORED
+
+The [Step 2 independent evaluation workflow](docs/independent_evaluation_mvp.md) enforces a 240-record human-reference sample with 96 blinded second reviews, requires final adjudication for conflicting or uncertain judgments, and freezes a file-hashed reference manifest only after an explicit truthful human attestation. The offline scorer verifies matching source, model and prompt fingerprints, rejects fixture/replay as empirical inference, and audits missed eligible records, abstentions and potential auto-exclusions.
+
+```bash
+pytest -q tests/test_independent_benchmark.py
+```
+
+**These are synthetic integrity tests, not measured model accuracy.** The reference screening/adjudication and live inference on this sample remain undone; until then, no false-negative rate, validated recall or workload saving can be claimed.
 
 ## v0.2: search-derived candidate corpus
 
