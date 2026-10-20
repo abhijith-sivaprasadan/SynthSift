@@ -1,0 +1,22 @@
+{
+  "status": "AI-assisted title/available-abstract first-pass; not human-adjudicated",
+  "protocol": "protocols/screening_protocol_v1.md",
+  "source_snapshot": "data/search/openalex_snapshot_2026-10-07",
+  "candidate_total": 538,
+  "phase1_original": 240,
+  "additional_2026_10_20": 298,
+  "counts": {
+    "include": 144,
+    "exclude": 341,
+    "uncertain": 53
+  },
+  "title_only": 208,
+  "abstract_available": 330,
+  "priority_unique": 150,
+  "potential_version_records": 66,
+  "uncertain_count": 53,
+  "title_only_includes": 51,
+  "human_reference_complete": false,
+  "human_second_review_complete": false,
+  "model_accuracy_estimates_valid": false
+}

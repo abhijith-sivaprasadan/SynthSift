@@ -41,6 +41,17 @@ The search protocol is frozen in [`protocols/search_protocol_v1.md`](protocols/s
 
 This is a ranked-search **candidate corpus**, not an exhaustive systematic-search strategy.
 
+## AI-assisted screening of all 538 frozen OpenAlex candidates — 20 October 2026
+
+The full **538-record ranked-search candidate corpus** has now received a title/available-abstract **AI-assisted first-pass eligibility recommendation**: **144 include, 341 exclude and 53 uncertain**. This includes the original 240-record Phase-1 AI sample, preserved with its original decisions, plus 298 newly examined records with individual protocol-grounded reasons.
+
+- [Complete 538-record screening ledger](data/ai_screening/full_corpus_ai_assisted_v1.csv) — original source titles, DOI/OpenAlex references, reviewer provenance and reasons.
+- [150 review-priority entries](data/ai_screening/full_corpus_review_priority_v1.csv) — unique records flagged for uncertainty, potential version duplication or inclusion from title alone.
+- [Reproducible corpus audit](scripts/audit_full_corpus_ai_screening.py) — reconstructs every output from eight unchanged OpenAlex source shards, the prior 240 decisions and six new batches; checks every committed output.
+- [Machine-readable status](data/ai_screening/full_corpus_summary_v1.json) — explicitly records that human reference screening and second review have **not** been completed.
+
+**Scientific limit:** These are AI suggestions, not a completed systematic review, adjudicated eligibility decisions or human reference labels. The acquired 538 records are relevance-ranked OpenAlex hits (not all relevant literature), include potential bibliographic duplicates and 208 title-only records, and have not undergone complete full-text eligibility assessment. Do **not** calculate model recall, reviewer kappa, literature prevalence or workload savings against the AI's own labels. See the [full-corpus methodology](data/ai_screening/full_corpus_readme.md).
+
 ## AI-assisted Phase-1 screening (separate from human reference)
 
 On 20 October 2026 an AI assistant completed an auditable **first-pass recommendation for all 240 sampled records**, following the frozen adoption protocol. The breakdown is **55 include, 158 exclude, 27 uncertain**. This was title/available-abstract screening with source excerpts and additional full-abstract checks of selected borderline cases, not independent human screening.
@@ -165,7 +176,7 @@ SynthSift keeps several boundaries explicit:
 
 ## Current limitations
 
-The search-derived corpus now has an AI-assisted first-pass sample screen, but still needs independent human reference screening. It is OpenAlex-only and relevance-ranked rather than an exhaustive multi-database systematic search. The current reference labels in the pilot have not undergone dual independent screening and adjudication. No real LLM comparison is reported yet.
+All 538 search-derived candidate records now have an AI-assisted first-pass recommendation, but independent human reference screening is still needed. It is OpenAlex-only and relevance-ranked rather than an exhaustive multi-database systematic search. The current reference labels in the pilot have not undergone dual independent screening and adjudication. No real LLM comparison is reported yet.
 
 Those are now explicit next research steps rather than hidden weaknesses.
 

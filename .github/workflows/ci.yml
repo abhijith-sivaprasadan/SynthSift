@@ -62,6 +62,9 @@ jobs:
       - name: Screening benchmark smoke test
         run: python scripts/run_screening_benchmark.py --repeats 3
 
+      - name: Verify all 538 AI-only source-linked decisions and priority flags
+        run: python scripts/audit_full_corpus_ai_screening.py --check
+
       - name: Extraction benchmark smoke test
         run: python scripts/run_extraction_benchmark.py
 

@@ -1,3 +1,17 @@
+# Full OpenAlex corpus AI-assisted first pass
+
+**Completed 20 October 2026:** all 538 frozen source candidate records have protocol-grounded, machine-attributed `include` / `exclude` / `uncertain` recommendations. **This does not complete the independent human reference screening.**
+
+- [Full 538-record AI ledger](full_corpus_ai_assisted_v1.csv) — complete source identifiers, reason, screening basis and priority flags.
+- [150-record review priorities](full_corpus_review_priority_v1.csv) — union of uncertain cases, potential version duplicates, and title-only include recommendations.
+- [Summary with strict limitations](full_corpus_summary_v1.json) — 144 include / 341 exclude / 53 uncertain, 330 with abstracts / 208 title-only.
+- [Six new screening batches](full_corpus_batch_01.csv) — `full_corpus_batch_01.csv` through `full_corpus_batch_06.csv` include the original decision-level explanations for the 298 non-sample records.
+- `python scripts/audit_full_corpus_ai_screening.py --check` rebuilds expected outputs from original OpenAlex and batch data without overwriting human screening.
+
+**Do not conflate these AI decisions with human eligibility labels, final included studies, measured screening accuracy or an exhaustive literature synthesis.** The 29 potential version clusters still need study-level adjudication. The original 240 decisions remain in their previous files, unchanged.
+
+---
+
 # AI-assisted Phase-1 screening — frozen OpenAlex sample
 
 **Performed:** 20 October 2026  

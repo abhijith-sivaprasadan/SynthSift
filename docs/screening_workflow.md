@@ -4,6 +4,8 @@ The v0.2 acquisition snapshot deliberately contains **no reference labels**. Hum
 
 > **AI first pass is separate:** On 20 October 2026, a complete 240-record AI-assisted recommendation set was committed under [`data/ai_screening/`](../data/ai_screening/README.md). It does not count toward the human reference queue, independent 96-record second review or final `data/labels/`. The original blinded human screening procedure below remains unchanged.
 
+> **Full-corpus AI triage has now been prepared:** 538/538 frozen OpenAlex candidates have provisional machine-attributed decisions ([full AI corpus](../data/ai_screening/full_corpus_readme.md)). This does not alter the 240-record independent human Phase-1 sample, the blinded 96-record subset, or the procedure below. No AI decision is a human reference label.
+
 ## Phase 1 — 240-record reference sample
 
 The committed Phase-1 sample contains **240 records** selected from the 538-record OpenAlex snapshot without using any classifier or LLM prediction.
