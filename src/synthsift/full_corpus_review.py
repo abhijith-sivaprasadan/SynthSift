@@ -61,7 +61,7 @@ def load_full_corpus() -> pd.DataFrame:
     if decisions["reason"].str.strip().str.len().lt(24).any():
         raise ValueError("Every record needs an individual protocol-grounded explanation")
 
-    metadata = source.merge(decisions, on="candidate_id", how="left", validate="one_to_one")
+    metadata = source.drop(columns=["screening_decision", "screening_reason", "reviewer", "adjudication_status"], errors="ignore").merge(decisions, on="candidate_id", how="left", validate="one_to_one")
     metadata["screening_basis"] = metadata["abstract"].str.strip().eq("").map(
         {True: "title-only", False: "title+abstract"}
     )
