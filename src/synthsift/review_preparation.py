@@ -160,3 +160,21 @@ def build_review_packs() -> tuple[dict[str, pd.DataFrame], dict]:
         "provisional_evidence_extraction_queue.csv": staging,
         "excluded_record_audit_queue.csv": excluded,
     }, stats
+
+
+
+def blind_reference_packets(destination: Path) -> None:
+    """Source-only exports without AI decisions, scores, reference labels or rationales."""
+    sample = read_csv(ROOT / "data/samples/phase1_screening_sample_240.csv")
+    columns = [
+        "candidate_id", "title", "abstract", "abstract_missing", "doi",
+        "openalex_id", "publication_year", "work_type", "language", "best_rank",
+    ]
+    if not all(sample[k].eq("").all() for k in ["decision", "reason", "reviewer"]):
+        raise ValueError("Frozen human reference sample unexpectedly contains decisions")
+    destination.mkdir(parents=True, exist_ok=True)
+    sample[columns].to_csv(destination / "blind_first_review_240.csv", index=False)
+    second = sample.loc[sample["second_review_sample"].eq("1"), columns]
+    if len(second) != 96:
+        raise ValueError("Frozen 96-record second-review subset changed")
+    second.to_csv(destination / "blind_second_review_96.csv", index=False)
