@@ -70,6 +70,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/synthsift/llm_runner.py scripts/run_llm_screening.py config/llm_screening_v1.json docs/llm_screening_system_v1.txt docs/llm_screening_mvp.md data/llm_demo tests/test_llm_runner.py README.md pyproject.toml .gitignore .github/workflows/ci.yml
+          git add src/synthsift/llm_runner.py scripts/run_llm_screening.py config/llm_screening_v1.json docs/llm_screening_system_v1.txt docs/llm_screening_mvp.md data/llm_demo tests/test_llm_runner.py README.md pyproject.toml .gitignore
           git commit -m "Implement traceable, cached and callable LLM screening v0.3"
           git push
