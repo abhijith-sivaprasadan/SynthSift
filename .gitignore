@@ -4,7 +4,6 @@ __pycache__/
 venv/
 *.py[cod]
 .DS_Store
-results/*.json
-results/*.csv
+results/*
 !results/.gitkeep
 annotations/*.csv

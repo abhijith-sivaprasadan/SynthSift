@@ -1,0 +1,41 @@
+{
+  "kind": "independent_handcrafted_fixture_v1",
+  "notice": "Hand-authored responses for testing program plumbing only. No AI inference, no accuracy metric, no relation to frozen 538-screen ledger.",
+  "replies": {
+    "5a35e4472b8fd0b7a77f6372d1bccdccf9442f82fb7c7217af754b8961f3b6c8": {
+      "decision": "include",
+      "reason_category": "adoption_determinants",
+      "reason": "The survey examines whether grant awareness and installation costs affect homeowner willingness to purchase residential heat pumps.",
+      "evidence_span": "grant awareness and initial installation costs",
+      "abstain": false
+    },
+    "19e80fb2a0fbb7da8f331c047fce18fa5a117d52d7dfc751c7e353f9f9322005": {
+      "decision": "exclude",
+      "reason_category": "non_residential",
+      "reason": "The work compares compressor performance for industrial process installations, not decisions to adopt domestic heat pumps.",
+      "evidence_span": "industrial process heat pump installations",
+      "abstain": false
+    },
+    "ac283eb7dab9008dd80c1eb723af4a8702e65ee965c155004488a595aed65c29": {
+      "decision": "uncertain",
+      "reason_category": "insufficient_evidence",
+      "reason": "The title alone does not establish a residential adoption question or any adoption determinant.",
+      "evidence_span": "",
+      "abstain": true
+    },
+    "ce4190d1d5f2322c59bce750336c57592fdda6acaf6b15cad1c41fc3527d9565": {
+      "decision": "include",
+      "reason_category": "cross_technology_choice",
+      "reason": "This household choice comparison specifically examines heat pumps and identifies trust and cost barriers to residential heating adoption.",
+      "evidence_span": "installer trust and upfront investment",
+      "abstain": false
+    },
+    "030a8f2e7ef43cd8ac8b55fb9aaf7528aa9f90335936f3aed3941b09331f6195": {
+      "decision": "exclude",
+      "reason_category": "post_installation_operation",
+      "reason": "The study schedules heat pumps that households already own and does not examine their acquisition or diffusion.",
+      "evidence_span": "schedules existing household heat pumps",
+      "abstain": false
+    }
+  }
+}
