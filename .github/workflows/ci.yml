@@ -50,6 +50,12 @@ jobs:
       - name: Unit, provenance, corpus, and sample-integrity tests
         run: pytest -q
 
+      - name: Offline LLM screening and exact replay (no external API)
+        run: |
+          python scripts/run_llm_screening.py --provider fixture --out "${{ runner.temp }}/llm-fixture"
+          python scripts/run_llm_screening.py --provider fixture --out "${{ runner.temp }}/llm-fixture" --resume
+          python scripts/run_llm_screening.py --provider replay --model synthetic-fixture-v1 --cache "${{ runner.temp }}/llm-fixture/screening.jsonl" --out "${{ runner.temp }}/llm-replay"
+
       - name: Rebuild deterministic screening samples
         run: python scripts/create_screening_samples.py --output-dir "${{ runner.temp }}/synthsift-samples"
 
