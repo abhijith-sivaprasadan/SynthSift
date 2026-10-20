@@ -1,0 +1,31 @@
+candidate_id,decision,reason,reviewer
+"OA0399","exclude","Heat-exchanger numerical design for building ground-source heat pump.",ai_assistant_gpt6_20261020
+"OA0400","exclude","Performance test of solar-assisted domestic heat-pump water heater.",ai_assistant_gpt6_20261020
+"OA0401","include","North American ground-source adoption is assessed in relation to public incentives and policies.",ai_assistant_gpt6_20261020
+"OA0402","exclude","Dual-product heat-pump lifecycle/environmental cost allocation without adoption question.",ai_assistant_gpt6_20261020
+"OA0403","exclude","Household PV-thermal heat-pump system performance and techno-economic assessment, not uptake decision.",ai_assistant_gpt6_20261020
+"OA0404","uncertain","Title advocates caloric-heat-pump technology for adoption but does not establish analysis of adoption determinants.",ai_assistant_gpt6_20261020
+"OA0405","exclude","Biological sodium pump regulation, not residential heating.",ai_assistant_gpt6_20261020
+"OA0406","exclude","Air-conditioning operational load aggregation and controllability, not acquisition of heat pumps.",ai_assistant_gpt6_20261020
+"OA0407","uncertain","Domestic ground-source deployment assessments may include household barriers, but title alone is insufficient.",ai_assistant_gpt6_20261020
+"OA0408","exclude","Adsorption-reactor material and geometry design.",ai_assistant_gpt6_20261020
+"OA0409","include","Thesis includes direct Canadian heat-pump owner versus nonowner survey and household willingness-to-pay analysis for alternative heating technologies.","ai_assistant_gpt6_20261020"
+"OA0410","include","Homeownership transfer is modelled as a trigger for ground-source heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0411","exclude","Cold-climate heat-pump peak-load operation and efficiency experiment.",ai_assistant_gpt6_20261020
+"OA0412","exclude","Embedded controller hardware for household CO2 heat pump.",ai_assistant_gpt6_20261020
+"OA0413","exclude","Water-heater prototype technical performance evaluation.",ai_assistant_gpt6_20261020
+"OA0414","exclude","Building ground-source heat-pump performance survey, no adoption decisions.",ai_assistant_gpt6_20261020
+"OA0415","exclude","Identification/control method for existing residential heat-pump systems.",ai_assistant_gpt6_20261020
+"OA0416","uncertain","Homeowner switching decisions studied but title does not confirm distinct heat-pump alternatives.",ai_assistant_gpt6_20261020
+"OA0417","include","Direct determinants of racial disparities in U.S. residential heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0418","exclude","Post-installation user improvisation and supplier response, not acquisition/diffusion decisions.",ai_assistant_gpt6_20261020
+"OA0419","exclude","Water-heating mode experimental heat-pump thermodynamics.",ai_assistant_gpt6_20261020
+"OA0470","exclude","Utility case studies focus on measured equipment performance and savings.",ai_assistant_gpt6_20261020
+"OA0471","exclude","Sorption dynamics modelling for adsorption heat-pump hardware.",ai_assistant_gpt6_20261020
+"OA0472","uncertain","Private-household heating alternatives discussed, but uptake determinants not established in title.",ai_assistant_gpt6_20261020
+"OA0473","exclude","Institutional campus energy alternatives rather than household heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0474","uncertain","Heating alternative lifecycle costs for a retirement development; no explicit heat-pump choice or determinants.",ai_assistant_gpt6_20261020
+"OA0475","exclude","Ocean heat uptake and climate model, unrelated to heat-pump technology.",ai_assistant_gpt6_20261020
+"OA0476","exclude","Preferences for demand-side load-control programmes using installed heat pumps, not adoption.",ai_assistant_gpt6_20261020
+"OA0477","exclude","Heat-pump data-driven soft sensors for operating equipment.",ai_assistant_gpt6_20261020
+"OA0478","include","System-dynamics model explicitly estimates price and technology impacts on Ontario homeowner adoption.",ai_assistant_gpt6_20261020

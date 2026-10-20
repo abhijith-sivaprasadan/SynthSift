@@ -64,3 +64,7 @@ jobs:
 
       - name: Extraction benchmark smoke test
         run: python scripts/run_extraction_benchmark.py
+
+      - name: Audit 240 AI-assisted decisions separately from human reference labels
+        run: python scripts/audit_ai_screening.py --out "${{ runner.temp }}/ai_first_pass"
+

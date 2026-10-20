@@ -1,0 +1,31 @@
+candidate_id,decision,reason,reviewer
+"OA0265","exclude","Household engagement with operational flexibility after heat-pump installation.",ai_assistant_gpt6_20261020
+"OA0271","include","Residential heat-pump adoption and social/economic factors simulated in Irish agent-based model.",ai_assistant_gpt6_20261020
+"OA0272","include","Forecasts residential ductless heat-pump adoption, a household uptake modelling task.",ai_assistant_gpt6_20261020
+"OA0273","exclude","Heat recovery technology overview without household adoption dimension.",ai_assistant_gpt6_20261020
+"OA0274","exclude","Rooftop solar and urban heat-island effect; heat-pump adoption appears only as a companion study.",ai_assistant_gpt6_20261020
+"OA0275","exclude","Technical coefficient analysis of residential bathing-room heat-pump water heater.",ai_assistant_gpt6_20261020
+"OA0276","exclude","Molecular heat pump physics, not domestic heating.",ai_assistant_gpt6_20261020
+"OA0277","include","Scottish homeowner attitudes and motivations for adopting domestic heat pumps.",ai_assistant_gpt6_20261020
+"OA0282","include","Scottish household heat-pump adoption and consumer feedback explicitly studied; possible version duplicate.",ai_assistant_gpt6_20261020
+"OA0288","exclude","Industrial heat-pump steam/fuel saving study.",ai_assistant_gpt6_20261020
+"OA0299","uncertain","Home-efficiency investment preferences, but title does not distinguish heat-pump choice.",ai_assistant_gpt6_20261020
+"OA0320","exclude","Model predicts post-installation retrofit efficiency, not adoption behaviour.",ai_assistant_gpt6_20261020
+"OA0321","exclude","Industrial distillation heat pumps and process integration.",ai_assistant_gpt6_20261020
+"OA0322","exclude","Heating-demand management with assumed widespread uptake, not drivers of adoption.",ai_assistant_gpt6_20261020
+"OA0323","exclude","Ground-source heat-pump performance case study of houses, without uptake decision.",ai_assistant_gpt6_20261020
+"OA0324","exclude","Hydrogen gas-pipeline conversion option for residential heating, not household heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0325","exclude","Energy-system dispatch and optimal electricity investments conditional on heat-pump adoption scenarios.",ai_assistant_gpt6_20261020
+"OA0326","uncertain","Broad UK technology-affordability review may discuss barriers, but title does not establish uptake analysis.",ai_assistant_gpt6_20261020
+"OA0327","exclude","Experimental adsorption heat-transfer measurement method.",ai_assistant_gpt6_20261020
+"OA0328","exclude","Combined solar and heat-pump system design, no household uptake.",ai_assistant_gpt6_20261020
+"OA0329","exclude","Energy-efficiency of electrical distribution substations; not residential adoption.",ai_assistant_gpt6_20261020
+"OA0340","exclude","Hotel boiler substitution and heat-pump economics, not residential household adoption.",ai_assistant_gpt6_20261020
+"OA0341","include","Causal household incentives study estimates low-income heat-pump adoption effects.",ai_assistant_gpt6_20261020
+"OA0342","exclude","Industrial heat recovery and heat-pump engineering application overview, not uptake determinants.",ai_assistant_gpt6_20261020
+"OA0343","exclude","Post-installation Norwegian household practices and energy use.",ai_assistant_gpt6_20261020
+"OA0344","exclude","Soil conditions and ground-coupled heat-pump performance.",ai_assistant_gpt6_20261020
+"OA0345","uncertain","Acceptance of building renewable technologies, but heat pumps may be incidental and outcomes not separated.",ai_assistant_gpt6_20261020
+"OA0346","include","Cost-optimal residential building heat-pump adoption analysis.",ai_assistant_gpt6_20261020
+"OA0347","include","Swiss tenant discrete-choice experiment distinguishes heat pumps from fossil heating and tests tenant choice of apartment energy attributes.","ai_assistant_gpt6_20261020"
+"OA0348","exclude","Solar heat-pump integration into CHP planning model, unrelated to household uptake choices.",ai_assistant_gpt6_20261020

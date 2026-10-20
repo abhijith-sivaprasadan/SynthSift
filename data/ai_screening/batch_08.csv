@@ -1,0 +1,31 @@
+candidate_id,decision,reason,reviewer
+"OA0479","exclude","Solar water-heater service model, not heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0480","exclude","Operational heat-pump dispatch and thermal comfort optimisation after installation.",ai_assistant_gpt6_20261020
+"OA0481","exclude","Tropical-cyclone ocean heat uptake, not heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0482","exclude","Effect of humidity on domestic heat-pump exergy efficiency.",ai_assistant_gpt6_20261020
+"OA0483","exclude","Acoustic/vibration design and installation engineering review; adoption trends are context rather than evaluated household uptake determinants.","ai_assistant_gpt6_20261020"
+"OA0484","exclude","Passenger-car reversible heat-pump technical development.",ai_assistant_gpt6_20261020
+"OA0485","exclude","Field performance of installed domestic heat-pump water heaters; adoption context is background.",ai_assistant_gpt6_20261020
+"OA0486","uncertain","Household ground-source heat-pump life-cycle costs considered, but distinct adoption decision not established.",ai_assistant_gpt6_20261020
+"OA0487","exclude","Continental-shelf ocean carbon uptake, not a residential heat pump.",ai_assistant_gpt6_20261020
+"OA0488","exclude","Low-frequency load-shedding control of installed heat-pump loads.",ai_assistant_gpt6_20261020
+"OA0489","uncertain","Dutch survey measures adoption of renewable heating systems generally; cannot confirm heat-pump choice is distinguished.",ai_assistant_gpt6_20261020
+"OA0490","exclude","Post-installation household heat-pump electricity consumption model.",ai_assistant_gpt6_20261020
+"OA0491","exclude","Flexibility of heat-pump-heated building stock, not adoption determinants.",ai_assistant_gpt6_20261020
+"OA0492","exclude","Grid peak-demand effects under assumed widespread heat-pump uptake.",ai_assistant_gpt6_20261020
+"OA0493","exclude","Ground heat-pump transient thermal modelling and efficiency.",ai_assistant_gpt6_20261020
+"OA0494","include","Contractor, owner and incentive barriers to diffusion of variable-capacity heat pumps.",ai_assistant_gpt6_20261020
+"OA0495","exclude","CO2 evaporator engineering and geothermal adaptation; adoption term means equipment implementation.",ai_assistant_gpt6_20261020
+"OA0496","exclude","Measured floor-heating system performance and cycling COP.",ai_assistant_gpt6_20261020
+"OA0497","exclude","Microscopic Brownian heat-pump thermodynamics.",ai_assistant_gpt6_20261020
+"OA0498","exclude","Commercial-business innovation adoption cases, not household heat pumps.",ai_assistant_gpt6_20261020
+"OA0499","exclude","Solar ground-coupled heat-pump performance and LCOH simulation without adoption decision.",ai_assistant_gpt6_20261020
+"OA0530","exclude","Grid-frequency ancillary services from controlled water heaters, not residential purchase decisions.",ai_assistant_gpt6_20261020
+"OA0531","include","Market and policy barriers to heat-pump water-heater adoption in US buildings are explicit.",ai_assistant_gpt6_20261020
+"OA0532","exclude","Heat-pump water-heater test standard development; market context is incidental.",ai_assistant_gpt6_20261020
+"OA0533","exclude","Flexible heat-pump defrost hardware and component development.",ai_assistant_gpt6_20261020
+"OA0534","exclude","Ground-coupled heat-pump physical suitability mapping, not household adoption decision.",ai_assistant_gpt6_20261020
+"OA0535","exclude","District-heating heat-pump integration at substations, not household technology choice.",ai_assistant_gpt6_20261020
+"OA0536","include","Owner-occupier renovation choice experiment distinguishes heat-pump options among technical measures.",ai_assistant_gpt6_20261020
+"OA0537","include","Japanese ground-source deployment history, subsidy policy and barriers to further building adoption.",ai_assistant_gpt6_20261020
+"OA0538","exclude","Economic decisions about rooftop PV investment, with heat pumps only a possible modifier.",ai_assistant_gpt6_20261020

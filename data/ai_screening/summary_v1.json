@@ -1,0 +1,12 @@
+{
+  "method": "AI-assisted first pass, NOT human ground truth",
+  "protocol": "protocols/screening_protocol_v1.md",
+  "records": 240,
+  "include": 55,
+  "exclude": 158,
+  "uncertain": 27,
+  "flagged_for_human_review": 51,
+  "title_only": 93,
+  "independent_second_human_review": false,
+  "reference_labels_frozen": false
+}

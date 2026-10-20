@@ -1,0 +1,31 @@
+candidate_id,decision,reason,reviewer
+"OA0001","include","Title explicitly frames heat-purchase agreements as barriers to heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0002","exclude","Large-scale device uptake and performance modelling; no household adoption determinant established.",ai_assistant_gpt6_20261020
+"OA0003","include","Policy awareness and willingness to adopt residential heat pumps are central.",ai_assistant_gpt6_20261020
+"OA0004","exclude","Interview analysis focuses on installed-system performance gap and household practices, not adoption decisions.",ai_assistant_gpt6_20261020
+"OA0005","include","Empirical economic and income determinants of household heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0006","uncertain","Title mentions consumer heat supply but does not establish residential adoption or determinants.",ai_assistant_gpt6_20261020
+"OA0012","include","Economic determinants and household heat-pump uptake analysed; possible version duplicate of OA0005.",ai_assistant_gpt6_20261020
+"OA0013","include","Policy effectiveness for heat-pump uptake analysed via agent-based modelling.",ai_assistant_gpt6_20261020
+"OA0040","exclude","Models distribution-grid consequences of uptake, not drivers or barriers to household adoption.",ai_assistant_gpt6_20261020
+"OA0041","include","Domestic incentive uptake and barriers to heat-pump adoption analysed in agent-based model.",ai_assistant_gpt6_20261020
+"OA0042","include","Consumer heat-pump preferences assessed through a choice experiment.",ai_assistant_gpt6_20261020
+"OA0043","include","Contractor training plausibly constrains heat-pump installation and adoption; title directly examines relationship.",ai_assistant_gpt6_20261020
+"OA0044","exclude","Addresses control-system implementation barriers rather than household heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0045","exclude","Models cooling access and proposed equipment installation but does not analyse drivers of household heat-pump choice.","ai_assistant_gpt6_20261020"
+"OA0046","exclude","Model-predictive control of an already selected ground-source heat-pump installation.",ai_assistant_gpt6_20261020
+"OA0047","include","Review explicitly examines slow ground-source heat-pump uptake and energy cultures.",ai_assistant_gpt6_20261020
+"OA0048","uncertain","Title signals adoption but gives no evidence of specific determinants, study type or findings.",ai_assistant_gpt6_20261020
+"OA0049","uncertain","User learning and policy trajectories may relate to diffusion, but title does not establish adoption determinant.",ai_assistant_gpt6_20261020
+"OA0050","include","Experimental subsidy evidence directly relevant to heat-pump and retrofit adoption.",ai_assistant_gpt6_20261020
+"OA0051","include","Factors influencing domestic-sector heat-pump uptake are explicit.",ai_assistant_gpt6_20261020
+"OA0052","exclude","Control deployment barriers, not household adoption or ownership decisions.",ai_assistant_gpt6_20261020
+"OA0053","exclude","CO2 heat-pump dryer experimental thermodynamics unrelated to household space-heating adoption.",ai_assistant_gpt6_20261020
+"OA0054","uncertain","Generic adoption title alone insufficient to determine eligible study content.",ai_assistant_gpt6_20261020
+"OA0055","exclude","Analyses emissions consequences of assumed uptake, not determinants of uptake.",ai_assistant_gpt6_20261020
+"OA0056","exclude","Control deployment barriers and real-world operation, not household adoption.",ai_assistant_gpt6_20261020
+"OA0057","uncertain","Household consumption title does not reveal whether adoption determinants are studied.",ai_assistant_gpt6_20261020
+"OA0058","include","Household information channels and media credibility tested as inputs to heat-pump purchase decisions.",ai_assistant_gpt6_20261020
+"OA0059","exclude","Residential water-to-water heat-pump design without adoption-decision analysis.",ai_assistant_gpt6_20261020
+"OA0060","exclude","Quantifies operational flexibility and pricing of already-installed household heat pumps.",ai_assistant_gpt6_20261020
+"OA0061","uncertain","Title suggests an adoption question but is insufficient to establish an eligible analysis.",ai_assistant_gpt6_20261020
