@@ -20,6 +20,10 @@ The first 240 recommendations and original reviewer strings were **preserved ver
 
 Among these 538 source records, 330 have an OpenAlex abstract and 208 are title-only. These numbers refer to acquired records, not independent publications, and should **not** be interpreted as eligible-study prevalence. The original 29 normalized-title potential-version clusters cover 66 records. They remain separate candidates pending human study-level deduplication; the 144 AI includes may include multiple bibliographic versions of the same study.
 
+## Version-level consistency audit
+
+The 29 source-defined potential-version clusters were compared without collapsing records. **28 clusters have uniform machine decisions; one cluster (VC006) has discordant provisional decisions:** OA0293 (`include`) versus OA0356 and OA0416 (`uncertain`), all title-only versions of *Switching from Fossil Fuel to Renewables in Residential Heating Systems*. The original Phase-1 decisions for OA0356 and OA0416 have been preserved rather than overwritten. All three IDs are already in the priority table; identifying the same underlying study does not itself resolve its eligibility from title-only evidence.
+
 ## Review-priority list — 150 distinct records
 
 The [priority table](full_corpus_review_priority_v1.csv) is the **union** of three overlapping flags:
