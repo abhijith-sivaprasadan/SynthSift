@@ -17,7 +17,7 @@ def verify_committed(df: pd.DataFrame, result: dict) -> None:
     priority = pd.read_csv(
         base / "full_corpus_review_priority_v1.csv", dtype=str, keep_default_na=False
     )
-    expected_priority = df.loc[df["priority_flags"].ne("")]
+    expected_priority = df.loc[df["priority_flags"].ne("")].reset_index(drop=True)
     pd.testing.assert_frame_equal(ledger, df, check_dtype=False)
     pd.testing.assert_frame_equal(priority, expected_priority, check_dtype=False)
     published = json.loads((base / "full_corpus_summary_v1.json").read_text(encoding="utf8"))
