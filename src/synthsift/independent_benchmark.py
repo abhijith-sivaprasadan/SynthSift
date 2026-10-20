@@ -10,7 +10,7 @@ import json
 import math
 from pathlib import Path
 
-from synthsift.llm_runner import canonical, digest, validate_response
+from synthsift.llm_runner import canonical, digest, validate_response, RESPONSE_SCHEMA
 
 BINARY = {"include", "exclude"}
 
@@ -117,6 +117,8 @@ def evaluate(sample_path: Path, reference_path: Path, manifest_path: Path,
     ]
     if config["input_manifest_sha256"] != digest(canonical(input_recs)):
         raise ValueError("LLM run was not performed on this exact frozen sample and order")
+    if config.get("schema_sha256") != digest(canonical(RESPONSE_SCHEMA)):
+        raise ValueError("LLM output schema fingerprint differs from the committed evaluator")
     if config["model"].lower().startswith(("synthetic", "fixture", "demo")):
         raise ValueError("Synthetic screening cannot yield independent model-accuracy claims")
 
@@ -137,6 +139,15 @@ def evaluate(sample_path: Path, reference_path: Path, manifest_path: Path,
                   "abstract": item["abstract"].strip()}
         if p.get("input_sha256") != digest(canonical(source)):
             raise ValueError(f"{key}: source fingerprint mismatch")
+        request = {
+            "input_sha256": p["input_sha256"],
+            "prompt_sha256": config["prompt_sha256"],
+            "model": config["model"],
+            "temperature": config["temperature"],
+            "output_schema_sha256": config["schema_sha256"],
+        }
+        if p.get("request_sha256") != digest(canonical(request)):
+            raise ValueError(f"{key}: exact LLM request fingerprint mismatch")
         if p.get("provider") != "openai":
             raise ValueError(f"{key}: fixture/replay/non-live provider is not independently scored")
         if any(p.get(k) != config[k] for k in ("model", "prompt_version", "temperature")):
