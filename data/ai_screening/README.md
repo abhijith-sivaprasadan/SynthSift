@@ -33,6 +33,8 @@ python scripts/audit_ai_screening.py --out results/ai_first_pass
 pytest -q tests/test_ai_screening.py
 ```
 
+Convenience copies are also committed: [`phase1_ai_assisted_v1.csv`](phase1_ai_assisted_v1.csv), a source-linked 240-record ledger; [`priority_rechecks_v1.csv`](priority_rechecks_v1.csv), the 51 records marked uncertain and/or potential bibliographic duplicates; and [`summary_v1.json`](summary_v1.json), a machine-readable status statement.
+
 Output:
 - `ai_decisions_240.csv` — annotated sample, source IDs and reasons.
 - `human_review_priority.csv` — uncertain cases and potential version duplicates; may contain both types of flags.
