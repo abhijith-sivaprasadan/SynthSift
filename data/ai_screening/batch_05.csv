@@ -27,5 +27,5 @@ candidate_id,decision,reason,reviewer
 "OA0344","exclude","Soil conditions and ground-coupled heat-pump performance.",ai_assistant_gpt6_20261020
 "OA0345","uncertain","Acceptance of building renewable technologies, but heat pumps may be incidental and outcomes not separated.",ai_assistant_gpt6_20261020
 "OA0346","include","Cost-optimal residential building heat-pump adoption analysis.",ai_assistant_gpt6_20261020
-"OA0347","uncertain","Tenant preferences for clean building features studied, but available abstract does not establish distinct heat-pump response.",ai_assistant_gpt6_20261020
+"OA0347","include","Swiss tenant discrete-choice experiment distinguishes heat pumps from fossil heating and tests tenant choice of apartment energy attributes.","ai_assistant_gpt6_20261020"
 "OA0348","exclude","Solar heat-pump integration into CHP planning model, unrelated to household uptake choices.",ai_assistant_gpt6_20261020
