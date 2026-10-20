@@ -2,6 +2,8 @@
 
 The v0.2 acquisition snapshot deliberately contains **no reference labels**. Human decisions are kept separate from acquisition and model outputs so that later evaluation remains interpretable.
 
+> **AI first pass is separate:** On 20 October 2026, a complete 240-record AI-assisted recommendation set was committed under [`data/ai_screening/`](../data/ai_screening/README.md). It does not count toward the human reference queue, independent 96-record second review or final `data/labels/`. The original blinded human screening procedure below remains unchanged.
+
 ## Phase 1 — 240-record reference sample
 
 The committed Phase-1 sample contains **240 records** selected from the 538-record OpenAlex snapshot without using any classifier or LLM prediction.
