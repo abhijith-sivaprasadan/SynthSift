@@ -1,31 +1,31 @@
 candidate_id,decision,reason,reviewer
-"OA0349","exclude","Technical overview of building heat-pump efficiency and integration, not adoption determinants."
-"OA0350","exclude","Carbon savings performance modelling of installed domestic ground-source heat pumps."
-"OA0351","exclude","Tumble-dryer internal heat/mass transfer experiments."
-"OA0352","exclude","Electrical-load modelling under assumed uptake, not uptake drivers."
-"OA0353","include","Review identifies prices, regulations and subsidies as barriers to homeowner heat-pump adoption."
-"OA0354","include","Stakeholder survey and literature review measure nontechnical heat-pump acceptance barriers."
-"OA0355","exclude","Tumble-dryer load estimation sensor algorithm, unrelated to household heating choices."
-"OA0356","uncertain","German homeowner heating choices studied, but heat-pump choice is not distinguishable in title."
-"OA0357","include","Survey and interviews of early adopters identify installation and education obstacles affecting adoption."
-"OA0358","exclude","Adsorbent materials and cooling/desalination technology."
-"OA0359","exclude","Energy/emissions effects of heating electrification, not adoption determinants."
-"OA0370","exclude","Industrial waste-heat recovery and equipment economics."
-"OA0371","exclude","Post-installation district-heating demand-shifting field study."
-"OA0372","exclude","Domestic heat-pump lifecycle environmental assessment with incidental deployment context."
-"OA0373","exclude","Technology and measured heat-pump performance for an intelligent house."
-"OA0374","exclude","ANSYS fluid simulation of household water-heater condenser geometry."
-"OA0375","exclude","Industrial process electrification feasibility report."
-"OA0376","exclude","Effects of installed heat-pump hydronics on household grid electricity use."
-"OA0377","exclude","Exhaust-air heat recovery heat-pump technology application, no adoption outcomes."
-"OA0378","exclude","Brownian heat-pump statistical physics."
-"OA0379","exclude","Heat-pump operating demand response in an existing dwelling."
-"OA0390","exclude","District-heating system waste-heat integration case study."
-"OA0391","include","Simulates spatial diffusion of residential heat pumps using neighborhood characteristics relevant to uptake."
-"OA0392","exclude","Heat-pump defrost control and thermal performance, not adoption behaviour."
-"OA0393","uncertain","Household choice experiment values indoor-environment devices including heat pumps; unclear if heat-pump preferences are separately analysed."
-"OA0394","exclude","Household laundry-dryer energy-consumption improvement study."
-"OA0395","exclude","Adsorption sorbent-design and material screening."
-"OA0396","exclude","Cogeneration plant waste-heat recovery and heat-pump optimisation."
-"OA0397","exclude","Willingness to join flexibility programmes using existing heat-pump control, not purchase/adoption."
-"OA0398","exclude","Low-voltage network hosting capacity under assumed heat-pump uptake."
+"OA0349","exclude","Technical overview of building heat-pump efficiency and integration, not adoption determinants.",ai_assistant_gpt6_20261020
+"OA0350","exclude","Carbon savings performance modelling of installed domestic ground-source heat pumps.",ai_assistant_gpt6_20261020
+"OA0351","exclude","Tumble-dryer internal heat/mass transfer experiments.",ai_assistant_gpt6_20261020
+"OA0352","exclude","Electrical-load modelling under assumed uptake, not uptake drivers.",ai_assistant_gpt6_20261020
+"OA0353","include","Review identifies prices, regulations and subsidies as barriers to homeowner heat-pump adoption.",ai_assistant_gpt6_20261020
+"OA0354","include","Stakeholder survey and literature review measure nontechnical heat-pump acceptance barriers.",ai_assistant_gpt6_20261020
+"OA0355","exclude","Tumble-dryer load estimation sensor algorithm, unrelated to household heating choices.",ai_assistant_gpt6_20261020
+"OA0356","uncertain","German homeowner heating choices studied, but heat-pump choice is not distinguishable in title.",ai_assistant_gpt6_20261020
+"OA0357","include","Survey and interviews of early adopters identify installation and education obstacles affecting adoption.",ai_assistant_gpt6_20261020
+"OA0358","exclude","Adsorbent materials and cooling/desalination technology.",ai_assistant_gpt6_20261020
+"OA0359","exclude","Energy/emissions effects of heating electrification, not adoption determinants.",ai_assistant_gpt6_20261020
+"OA0370","exclude","Industrial waste-heat recovery and equipment economics.",ai_assistant_gpt6_20261020
+"OA0371","exclude","Post-installation district-heating demand-shifting field study.",ai_assistant_gpt6_20261020
+"OA0372","exclude","Domestic heat-pump lifecycle environmental assessment with incidental deployment context.",ai_assistant_gpt6_20261020
+"OA0373","exclude","Technology and measured heat-pump performance for an intelligent house.",ai_assistant_gpt6_20261020
+"OA0374","exclude","ANSYS fluid simulation of household water-heater condenser geometry.",ai_assistant_gpt6_20261020
+"OA0375","exclude","Industrial process electrification feasibility report.",ai_assistant_gpt6_20261020
+"OA0376","exclude","Effects of installed heat-pump hydronics on household grid electricity use.",ai_assistant_gpt6_20261020
+"OA0377","exclude","Exhaust-air heat recovery heat-pump technology application, no adoption outcomes.",ai_assistant_gpt6_20261020
+"OA0378","exclude","Brownian heat-pump statistical physics.",ai_assistant_gpt6_20261020
+"OA0379","exclude","Heat-pump operating demand response in an existing dwelling.",ai_assistant_gpt6_20261020
+"OA0390","exclude","District-heating system waste-heat integration case study.",ai_assistant_gpt6_20261020
+"OA0391","include","Simulates spatial diffusion of residential heat pumps using neighborhood characteristics relevant to uptake.",ai_assistant_gpt6_20261020
+"OA0392","exclude","Heat-pump defrost control and thermal performance, not adoption behaviour.",ai_assistant_gpt6_20261020
+"OA0393","uncertain","Household choice experiment values indoor-environment devices including heat pumps; unclear if heat-pump preferences are separately analysed.",ai_assistant_gpt6_20261020
+"OA0394","exclude","Household laundry-dryer energy-consumption improvement study.",ai_assistant_gpt6_20261020
+"OA0395","exclude","Adsorption sorbent-design and material screening.",ai_assistant_gpt6_20261020
+"OA0396","exclude","Cogeneration plant waste-heat recovery and heat-pump optimisation.",ai_assistant_gpt6_20261020
+"OA0397","exclude","Willingness to join flexibility programmes using existing heat-pump control, not purchase/adoption.",ai_assistant_gpt6_20261020
+"OA0398","exclude","Low-voltage network hosting capacity under assumed heat-pump uptake.",ai_assistant_gpt6_20261020
