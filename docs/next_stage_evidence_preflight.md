@@ -45,6 +45,17 @@ python scripts/refresh_title_only_sources.py --allow-live --limit 87 --out resul
 
 It does not copy abstracts, fetch articles, follow or test publisher PDF links, or reclassify studies. The metadata flag `has_abstract_now=yes` means only that a current OpenAlex inverted-index abstract is available. Any API failures must be reported, not misinterpreted as missing abstracts or inaccessible articles. Source documentation: [OpenAlex API authentication](https://help.openalex.org/api/authentication/) and [Works endpoint reference](https://help.openalex.org/api/endpoints/).
 
+## Live OpenAlex follow-up outcome — 20 October 2026
+
+An independent **metadata-only OpenAlex API refresh** was executed for the 87 title-only AI include/uncertain records and committed as [per-record results](../data/review_preparation/openalex_title_only_metadata_20261020.csv) with [machine-readable summary](../data/review_preparation/openalex_title_only_metadata_20261020.json).
+
+- **82/87** expected OpenAlex work IDs returned metadata successfully, but **none of those 82 exposed an abstract** in the refreshed OpenAlex inverted-index field.
+- **5/87** returned HTTP 404: `OA0150`, `OA0282`, `OA0381`, `OA0458`, `OA0467`. A 404 is an unresolved OpenAlex metadata lookup, **not evidence that the publication is missing or invalid**; investigate by DOI/publisher separately.
+- **Zero full texts** were downloaded or independently verified. OpenAlex-provided open-access landing URLs are **unverified pointers**; they do not prove publisher PDF access, completeness or study eligibility.
+- The date-stamped refresh is observational, so reproducing live HTTP responses later is not guaranteed. The original frozen 538 source records and 144/341/53 AI decisions were **not** altered.
+
+Live response report: [GitHub Actions](https://github.com/abhijith-sivaprasadan/SynthSift/actions/runs/39464074650).
+
 ## Next research work still required
 
 1. **Independent human title/abstract reference screening and 96-record blind second review**. Current machine first-pass coverage is not ground truth.
