@@ -9,7 +9,7 @@ candidate_id,decision,reason,reviewer
 "OA0406","exclude","Air-conditioning operational load aggregation and controllability, not acquisition of heat pumps.",ai_assistant_gpt6_20261020
 "OA0407","uncertain","Domestic ground-source deployment assessments may include household barriers, but title alone is insufficient.",ai_assistant_gpt6_20261020
 "OA0408","exclude","Adsorption-reactor material and geometry design.",ai_assistant_gpt6_20261020
-"OA0409","uncertain","Policy and consumer intentions across multiple technologies including home heating; unclear whether heat-pump adoption is separately analysed.",ai_assistant_gpt6_20261020
+"OA0409","include","Thesis includes direct Canadian heat-pump owner versus nonowner survey and household willingness-to-pay analysis for alternative heating technologies.","ai_assistant_gpt6_20261020"
 "OA0410","include","Homeownership transfer is modelled as a trigger for ground-source heat-pump adoption.",ai_assistant_gpt6_20261020
 "OA0411","exclude","Cold-climate heat-pump peak-load operation and efficiency experiment.",ai_assistant_gpt6_20261020
 "OA0412","exclude","Embedded controller hardware for household CO2 heat pump.",ai_assistant_gpt6_20261020
