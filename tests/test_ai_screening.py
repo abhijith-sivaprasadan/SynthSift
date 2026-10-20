@@ -53,3 +53,31 @@ def test_forged_human_reviewer_fails_closed(tmp_path: Path):
     file.write_text(file.read_text(encoding="utf8").replace(REVIEWER, "abhijith", 1))
     with pytest.raises(ValueError, match="machine reviewer"):
         load_ai_screening(batch_dir=tmp_path)
+
+
+def test_committed_ledgers_match_batch_records():
+    import pandas as pd
+
+    df = load_ai_screening()
+    all_decisions = pd.read_csv(ROOT / "data/ai_screening/phase1_ai_assisted_v1.csv").fillna("")
+    priority = pd.read_csv(ROOT / "data/ai_screening/priority_rechecks_v1.csv").fillna("")
+    assert len(all_decisions) == len(df) == 240
+    assert all_decisions["candidate_id"].tolist() == df["candidate_id"].tolist()
+    assert all_decisions["decision"].tolist() == df["decision"].tolist()
+    assert all_decisions["reason"].tolist() == df["reason"].tolist()
+    assert all_decisions["reviewer"].eq(REVIEWER).all()
+    assert priority["candidate_id"].tolist() == df.loc[
+        df["review_priority"].ne(""), "candidate_id"
+    ].tolist()
+    assert len(priority) == 51
+
+
+def test_committed_summary_prohibits_human_ground_truth_claim():
+    import json
+
+    x = json.loads((ROOT / "data/ai_screening/summary_v1.json").read_text())
+    assert x["records"] == 240
+    assert (x["include"], x["exclude"], x["uncertain"]) == (55, 158, 27)
+    assert x["flagged_for_human_review"] == 51
+    assert x["independent_second_human_review"] is False
+    assert x["reference_labels_frozen"] is False
