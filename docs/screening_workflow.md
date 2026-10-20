@@ -6,6 +6,8 @@ The v0.2 acquisition snapshot deliberately contains **no reference labels**. Hum
 
 > **Full-corpus AI triage has now been prepared:** 538/538 frozen OpenAlex candidates have provisional machine-attributed decisions ([full AI corpus](../data/ai_screening/full_corpus_readme.md)). This does not alter the 240-record independent human Phase-1 sample, the blinded 96-record subset, or the procedure below. No AI decision is a human reference label.
 
+> **Preparation available, not independent review:** The [study-level source and bibliographic preflight](next_stage_evidence_preflight.md) provides DOI/OpenAlex pointers and unresolved potential versions, plus an *optional* source-only 240/96 blinded packet generator. This does not change either independent reviewer requirement or constitute full-text acquisition.
+
 ## Phase 1 — 240-record reference sample
 
 The committed Phase-1 sample contains **240 records** selected from the 538-record OpenAlex snapshot without using any classifier or LLM prediction.
