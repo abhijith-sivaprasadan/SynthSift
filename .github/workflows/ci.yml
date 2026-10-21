@@ -62,6 +62,11 @@ jobs:
       - name: Rebuild deterministic screening samples
         run: python scripts/create_screening_samples.py --output-dir "${{ runner.temp }}/synthsift-samples"
 
+      - name: Reconstruct preregistered AI-blind empirical validation pilot
+        run: |
+          python scripts/create_validation_pilot.py --out "${{ runner.temp }}/validation_pilot_80_v1.csv"
+          python scripts/create_validation_pilot.py --out "${{ runner.temp }}/validation_pilot_80_v1.csv" --check
+
       - name: Build full search-derived screening queue
         run: python scripts/build_screening_queue.py
 

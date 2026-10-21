@@ -29,6 +29,17 @@ The **five-citation demo consists entirely of invented example records and handc
 
 See [engine instructions, exact outputs and failure modes](docs/llm_screening_mvp.md). This component does **not** change the original 538 AI-assisted recommendations and does not claim independently measured classification accuracy. The MVP step-2 independent evaluation tooling is now implemented, but no human-reviewed/live-model accuracy results exist yet.
 
+## Pre-registered empirical pilot (80 citations / 32 dual reviews)
+
+For an earlier, explicitly exploratory validation before the full 240/96 human-review benchmark, [create the deterministic AI-blind 80/32 pilot](docs/empirical_validation_pilot.md). It uses the existing sample strata and SHA-256 selection, never the 538 AI screening recommendations. The pilot can be generated and verified offline:
+
+```bash
+python scripts/create_validation_pilot.py
+python scripts/create_validation_pilot.py --check
+```
+
+A **real empirical result still requires human reference reviewers and billable live-model inference**. CI demonstrates selection reproducibility, not model accuracy or independent human review.
+
 ## v0.4 independent evaluation framework — implemented, NOT YET EMPIRICALLY SCORED
 
 The [Step 2 independent evaluation workflow](docs/independent_evaluation_mvp.md) enforces a 240-record human-reference sample with 96 blinded second reviews, requires final adjudication for conflicting or uncertain judgments, and freezes a file-hashed reference manifest only after an explicit truthful human attestation. The offline scorer verifies matching source, model and prompt fingerprints, rejects fixture/replay as empirical inference, and audits missed eligible records, abstentions and potential auto-exclusions.
