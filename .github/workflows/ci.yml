@@ -56,6 +56,9 @@ jobs:
           python scripts/run_llm_screening.py --provider fixture --out "${{ runner.temp }}/llm-fixture" --resume
           python scripts/run_llm_screening.py --provider replay --model synthetic-fixture-v1 --cache "${{ runner.temp }}/llm-fixture/screening.jsonl" --out "${{ runner.temp }}/llm-replay"
 
+      - name: Independent benchmark integrity regression (synthetic data only)
+        run: python -m pytest -q tests/test_independent_benchmark.py
+
       - name: Rebuild deterministic screening samples
         run: python scripts/create_screening_samples.py --output-dir "${{ runner.temp }}/synthsift-samples"
 
