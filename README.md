@@ -242,3 +242,13 @@ MIT for project code. Bibliographic metadata comes from OpenAlex; source-linked 
 [![CI](https://github.com/abhijith-sivaprasadan/SynthSift/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/abhijith-sivaprasadan/SynthSift/actions/workflows/ci.yml)
 
 See [CI coverage and limitations](CI.md) for the automated checks. The status badge tracks the default branch.
+
+<!-- portfolio-reader-guide-2026:start -->
+## Engineering portfolio reader's guide (November 2026)
+
+**What to inspect:** Human-in-the-loop environmental evidence screening with provenance and abstention controls, demonstrated on heat-pump adoption literature. Not a completed systematic review.
+
+**Portfolio case:** [Project context and evidence](https://abhijith-sivaprasadan.github.io/projects/synthsift.html) · [Armada 2026 employer-facing selection](https://abhijith-sivaprasadan.github.io/for/armada-2026.html).
+
+These navigation links do not supersede the research status, assumptions, provenance, licences or validation limits documented above. This repository is not an employer-commissioned deliverable unless explicitly stated in its original project record.
+<!-- portfolio-reader-guide-2026:end -->
